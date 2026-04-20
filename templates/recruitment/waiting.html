@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="card shadow">
+                <div class="card-body py-5">
+                    <div class="mb-4">
+                        <i class="bi bi-hourglass-split text-primary" style="font-size: 4rem;"></i>
+                    </div>
+                    <h3 class="mb-3">Please Wait</h3>
+                    {% if message %}
+                        <p class="text-muted">{{ message }}</p>
+                    {% else %}
+                        <p class="text-muted">Your application is under review. You will be notified once approved.</p>
+                    {% endif %}
+                    <hr>
+                    <a href="{% url 'candidate-logout' %}" class="btn btn-outline-secondary">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

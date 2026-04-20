@@ -1,0 +1,277 @@
+[
+  {
+    "model": "roles.role",
+    "pk": 1,
+    "fields": {
+      "title": "CEO",
+      "level": "EXECUTIVE",
+      "department": 1,
+      "description": "Chief Executive Officer - Overall company leadership",
+      "responsibilities": "Strategic planning, board relations, investor communications, final authority on all decisions"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 2,
+    "fields": {
+      "title": "CTO",
+      "level": "EXECUTIVE",
+      "department": 1,
+      "description": "Chief Technology Officer - Technology strategy and execution",
+      "responsibilities": "Technology roadmap, engineering leadership, technical architecture, innovation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 3,
+    "fields": {
+      "title": "CIO",
+      "level": "EXECUTIVE",
+      "department": 5,
+      "description": "Chief Information Officer - IT operations and infrastructure",
+      "responsibilities": "IT infrastructure, systems security, technology procurement, digital transformation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 4,
+    "fields": {
+      "title": "CHRO",
+      "level": "EXECUTIVE",
+      "department": 2,
+      "description": "Chief Human Resources Officer - People strategy",
+      "responsibilities": "HR strategy, talent management, culture development, employee relations"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 5,
+    "fields": {
+      "title": "VP Engineering",
+      "level": "UPPER_MANAGEMENT",
+      "department": 1,
+      "description": "Vice President of Engineering",
+      "responsibilities": "Engineering team leadership, technical strategy, project delivery"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 6,
+    "fields": {
+      "title": "VP HR",
+      "level": "UPPER_MANAGEMENT",
+      "department": 2,
+      "description": "Vice President of Human Resources",
+      "responsibilities": "HR operations, talent acquisition, employee development"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 7,
+    "fields": {
+      "title": "Director Engineering",
+      "level": "UPPER_MANAGEMENT",
+      "department": 1,
+      "description": "Director of Engineering",
+      "responsibilities": "Engineering projects, team management, technical excellence"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 8,
+    "fields": {
+      "title": "Director Product",
+      "level": "UPPER_MANAGEMENT",
+      "department": 3,
+      "description": "Director of Product",
+      "responsibilities": "Product strategy, roadmap, stakeholder management"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 9,
+    "fields": {
+      "title": "Head of HR",
+      "level": "UPPER_MANAGEMENT",
+      "department": 2,
+      "description": "Head of Human Resources",
+      "responsibilities": "HR operations, policies, employee engagement"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 10,
+    "fields": {
+      "title": "Engineering Manager",
+      "level": "MIDDLE_MANAGEMENT",
+      "department": 1,
+      "description": "Engineering Manager",
+      "responsibilities": "Team leadership, sprint planning, code reviews, performance management"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 11,
+    "fields": {
+      "title": "Product Manager",
+      "level": "MIDDLE_MANAGEMENT",
+      "department": 3,
+      "description": "Product Manager",
+      "responsibilities": "Product backlog, user stories, stakeholder coordination, roadmap execution"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 12,
+    "fields": {
+      "title": "HR Manager",
+      "level": "MIDDLE_MANAGEMENT",
+      "department": 2,
+      "description": "HR Manager",
+      "responsibilities": "HR operations, recruitment, employee relations"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 13,
+    "fields": {
+      "title": "Project Manager",
+      "level": "MIDDLE_MANAGEMENT",
+      "department": 1,
+      "description": "Project Manager",
+      "responsibilities": "Project planning, timeline management, resource allocation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 14,
+    "fields": {
+      "title": "Senior Software Engineer",
+      "level": "SENIOR_PROFESSIONAL",
+      "department": 1,
+      "description": "Senior Software Engineer",
+      "responsibilities": "Technical leadership, architecture design, mentoring, code reviews"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 15,
+    "fields": {
+      "title": "Senior Data Scientist",
+      "level": "SENIOR_PROFESSIONAL",
+      "department": 1,
+      "description": "Senior Data Scientist",
+      "responsibilities": "Data analysis, ML models, insights generation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 16,
+    "fields": {
+      "title": "DevOps Engineer",
+      "level": "SENIOR_PROFESSIONAL",
+      "department": 10,
+      "description": "DevOps Engineer",
+      "responsibilities": "CI/CD, infrastructure as code, cloud management"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 17,
+    "fields": {
+      "title": "HRBP",
+      "level": "SENIOR_PROFESSIONAL",
+      "department": 2,
+      "description": "HR Business Partner",
+      "responsibilities": "Business unit HR support, employee relations, talent planning"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 18,
+    "fields": {
+      "title": "Software Engineer",
+      "level": "JUNIOR_PROFESSIONAL",
+      "department": 1,
+      "description": "Software Engineer",
+      "responsibilities": "Feature development, bug fixes, code implementation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 19,
+    "fields": {
+      "title": "QA Engineer",
+      "level": "JUNIOR_PROFESSIONAL",
+      "department": 1,
+      "description": "Quality Assurance Engineer",
+      "responsibilities": "Test planning, test execution, bug reporting"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 20,
+    "fields": {
+      "title": "System Analyst",
+      "level": "JUNIOR_PROFESSIONAL",
+      "department": 5,
+      "description": "System Analyst",
+      "responsibilities": "System analysis, requirements gathering, documentation"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 21,
+    "fields": {
+      "title": "HR Executive",
+      "level": "JUNIOR_PROFESSIONAL",
+      "department": 2,
+      "description": "HR Executive",
+      "responsibilities": "Recruitment support, onboarding, employee records"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 22,
+    "fields": {
+      "title": "Finance Manager",
+      "level": "MIDDLE_MANAGEMENT",
+      "department": 4,
+      "description": "Finance Manager",
+      "responsibilities": "Financial planning, budgeting, reporting"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 23,
+    "fields": {
+      "title": "IT Support Specialist",
+      "level": "SUPPORT",
+      "department": 5,
+      "description": "IT Support Specialist",
+      "responsibilities": "Help desk, hardware support, user assistance"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 24,
+    "fields": {
+      "title": "Legal Counsel",
+      "level": "SENIOR_PROFESSIONAL",
+      "department": 6,
+      "description": "Legal Counsel",
+      "responsibilities": "Legal compliance, contract review, risk management"
+    }
+  },
+  {
+    "model": "roles.role",
+    "pk": 25,
+    "fields": {
+      "title": "Admin Assistant",
+      "level": "SUPPORT",
+      "department": 7,
+      "description": "Administrative Assistant",
+      "responsibilities": "Office management, scheduling, correspondence"
+    }
+  }
+]

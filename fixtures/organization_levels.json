@@ -1,0 +1,62 @@
+[
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 1,
+    "fields": {
+      "name": "EXECUTIVE",
+      "display_name": "Executive Level",
+      "description": "C-level executives and board members",
+      "level_order": 1
+    }
+  },
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 2,
+    "fields": {
+      "name": "UPPER_MANAGEMENT",
+      "display_name": "Upper Management",
+      "description": "VP, Directors, and Head of Departments",
+      "level_order": 2
+    }
+  },
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 3,
+    "fields": {
+      "name": "MIDDLE_MANAGEMENT",
+      "display_name": "Middle Management",
+      "description": "Managers and Team Leads",
+      "level_order": 3
+    }
+  },
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 4,
+    "fields": {
+      "name": "SENIOR_PROFESSIONAL",
+      "display_name": "Senior Professionals",
+      "description": "Senior Engineers and Specialists",
+      "level_order": 4
+    }
+  },
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 5,
+    "fields": {
+      "name": "JUNIOR_PROFESSIONAL",
+      "display_name": "Junior Professionals",
+      "description": "Junior Engineers and Entry-level positions",
+      "level_order": 5
+    }
+  },
+  {
+    "model": "accounts.organizationlevel",
+    "pk": 6,
+    "fields": {
+      "name": "SUPPORT",
+      "display_name": "Support Functions",
+      "description": "Administrative and Support staff",
+      "level_order": 6
+    }
+  }
+]

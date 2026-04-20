@@ -1,0 +1,102 @@
+[
+  {
+    "model": "departments.department",
+    "pk": 1,
+    "fields": {
+      "name": "Engineering",
+      "code": "ENG",
+      "description": "Software development and technical operations",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 2,
+    "fields": {
+      "name": "Human Resources",
+      "code": "HR",
+      "description": "Employee management and recruitment",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 3,
+    "fields": {
+      "name": "Product",
+      "code": "PROD",
+      "description": "Product management and design",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 4,
+    "fields": {
+      "name": "Finance",
+      "code": "FIN",
+      "description": "Financial planning and accounting",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 5,
+    "fields": {
+      "name": "IT Support",
+      "code": "IT",
+      "description": "Internal IT infrastructure and support",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 6,
+    "fields": {
+      "name": "Legal",
+      "code": "LEGAL",
+      "description": "Legal compliance and contracts",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 7,
+    "fields": {
+      "name": "Administration",
+      "code": "ADMIN",
+      "description": "General administration and operations",
+      "parent_department": null
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 8,
+    "fields": {
+      "name": "Frontend Development",
+      "code": "FE",
+      "description": "Frontend engineering team",
+      "parent_department": 1
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 9,
+    "fields": {
+      "name": "Backend Development",
+      "code": "BE",
+      "description": "Backend engineering team",
+      "parent_department": 1
+    }
+  },
+  {
+    "model": "departments.department",
+    "pk": 10,
+    "fields": {
+      "name": "DevOps",
+      "code": "DEVOPS",
+      "description": "Infrastructure and operations",
+      "parent_department": 1
+    }
+  }
+]

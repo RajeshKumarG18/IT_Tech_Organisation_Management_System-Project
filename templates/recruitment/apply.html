@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block login_content %}
+<div class="login-page">
+    <div class="login-card" style="max-width: 600px;">
+        <div class="card-header">
+            <h3><i class="fas fa-user-plus"></i> Job Application</h3>
+            <p class="mb-0">Submit your details and resume</p>
+        </div>
+        <div class="card-body">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="post" enctype="multipart/form-data" action="{% url 'candidate-register' %}">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" name="first_name" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" name="last_name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email *</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone *</label>
+                        <input type="tel" name="phone" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Candidate Type *</label>
+                        <select name="candidate_type" class="form-select" required>
+                            <option value="">Select Type</option>
+                            <option value="FRESHER">Fresher</option>
+                            <option value="EXPERIENCED">Experienced</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Years of Experience</label>
+                        <input type="number" name="years_experience" class="form-control" min="0" value="0">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Position Applied *</label>
+                    <input type="text" name="position_applied" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Current Company (if experienced)</label>
+                    <input type="text" name="current_company" class="form-control">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Resume/CV *</label>
+                        <input type="file" name="resume" class="form-control" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">LinkedIn Profile</label>
+                        <input type="url" name="linkedin_profile" class="form-control" placeholder="https://linkedin.com/in/...">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">GitHub Profile</label>
+                    <input type="url" name="github_profile" class="form-control" placeholder="https://github.com/...">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-paper-plane"></i> Submit Application
+                </button>
+            </form>
+            
+            <div class="text-center mt-3">
+                <p class="text-muted">HR will review your application and send login credentials via email</p>
+                <a href="{% url 'candidate-login' %}" class="btn btn-outline-primary">Already applied? Login here</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block title %}Job Application - IT Org System{% endblock %}

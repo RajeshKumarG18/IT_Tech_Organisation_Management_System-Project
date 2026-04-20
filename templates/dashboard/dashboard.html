@@ -1,0 +1,849 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="dashboard-header">
+    <div>
+        <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+        <p class="text-muted">Welcome back, {{ user.get_full_name|default:user.username }}!</p>
+    </div>
+    <div class="header-actions">
+        <span class="badge bg-warning text-dark">{{ user.get_user_type_display }}</span>
+    </div>
+</div>
+
+{% if dashboard_type == 'executive' %}
+<!-- Executive Dashboard - Main Stats -->
+<div class="row stats-row">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card stat-card-primary">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-info">
+                <div class="stat-value">{{ total_employees_count|default:0 }}</div>
+                <div class="stat-label">Total Employees</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card stat-card-success">
+            <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+            <div class="stat-info">
+                <div class="stat-value">{{ total_employees_count|default:0 }}</div>
+                <div class="stat-label">Active Employees</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card stat-card-secondary">
+            <div class="stat-icon"><i class="fas fa-building"></i></div>
+            <div class="stat-info">
+                <div class="stat-value">{{ stats.total_departments }}</div>
+                <div class="stat-label">Departments</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="stat-card stat-card-info">
+            <div class="stat-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="stat-info">
+                <div class="stat-value">{{ stats.total_roles }}</div>
+                <div class="stat-label">Roles</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-bolt"></i> Quick Actions
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="{% url 'employee-list-web' %}" class="quick-action-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Add Employee</span>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="{% url 'worklog' %}" class="quick-action-btn">
+                            <i class="fas fa-clock"></i>
+                            <span>Work Log</span>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="{% url 'org-chart' %}" class="quick-action-btn">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Org Chart</span>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-calendar-plus"></i>
+                            <span>Schedule</span>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="#" class="quick-action-btn">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </a>
+                    </div>
+                    <div class="col-md-2 col-4 mb-3">
+                        <a href="{% url 'admin:index' %}" class="quick-action-btn">
+                            <i class="fas fa-cogs"></i>
+                            <span>Settings</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Charts Row -->
+<div class="row charts-row mb-4">
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-chart-pie"></i> Employees by Level
+            </div>
+            <div class="card-body">
+                <canvas id="levelChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-chart-bar"></i> By Department
+            </div>
+            <div class="card-body">
+                <canvas id="departmentChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-chart-line"></i> Growth Trend
+            </div>
+            <div class="card-body">
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Metrics -->
+<div class="row additional-stats mb-4">
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-birthday-cake"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">3</div>
+                <div class="mini-label">Birthdays</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-plane"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">2</div>
+                <div class="mini-label">On Leave</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-clipboard-check"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">4</div>
+                <div class="mini-label">Present</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-user-plus"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">1</div>
+                <div class="mini-label">New Hires</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-briefcase"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">5</div>
+                <div class="mini-label">Promotions</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+        <div class="mini-stat-card">
+            <div class="mini-icon"><i class="fas fa-door-open"></i></div>
+            <div class="mini-info">
+                <div class="mini-value">0</div>
+                <div class="mini-label">Resigned</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Row: Activity & Notifications -->
+<div class="row">
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-list"></i> Recent Activity
+            </div>
+            <div class="card-body activity-list">
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-user-plus"></i></div>
+                    <div class="activity-content">
+                        <strong>New Employee Added</strong>
+                        <p>John Doe joined Engineering department</p>
+                        <span class="activity-time">2 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-edit"></i></div>
+                    <div class="activity-content">
+                        <strong>Profile Updated</strong>
+                        <p>Sarah Jane updated contact details</p>
+                        <span class="activity-time">5 hours ago</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-clock"></i></div>
+                    <div class="activity-content">
+                        <strong>Work Log Submitted</strong>
+                        <p>Mike Wilson submitted daily log</p>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <div class="activity-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="activity-content">
+                        <strong>Leave Approved</strong>
+                        <p>Emily Davis leave request approved</p>
+                        <span class="activity-time">Yesterday</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-bell"></i> Notifications & Alerts
+            </div>
+            <div class="card-body notifications-list">
+                <div class="notification-item notification-urgent">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>3 employees have incomplete profiles</span>
+                </div>
+                <div class="notification-item notification-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Quarterly review meeting scheduled</span>
+                </div>
+                <div class="notification-item notification-info">
+                    <i class="fas fa-info-circle"></i>
+                    <span>2 leave requests pending approval</span>
+                </div>
+                <div class="notification-item notification-success">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Annual compliance completed</span>
+                </div>
+                <div class="notification-item notification-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>5 birthdays this month</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Empty Recent -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-user-plus"></i> Recently Joined Employees
+            </div>
+            <div class="card-body p-0">
+                <div class="empty-state">
+                    <i class="fas fa-user-clock"></i>
+                    <p>No recent employees</p>
+                    <small>New employees will appear here</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- New Widgets Row -->
+<div class="row mb-4">
+    <!-- Calendar Widget -->
+    <div class="col-lg-3 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-calendar-alt"></i> Calendar
+            </div>
+            <div class="card-body">
+                <div class="calendar-widget">
+                    <div class="calendar-header">
+                        <span id="calendarMonth">April 2026</span>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task/To-do List Widget -->
+    <div class="col-lg-3 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-tasks"></i> Tasks
+            </div>
+            <div class="card-body tasks-list">
+                <div class="task-item">
+                    <input type="checkbox" id="task1" checked>
+                    <label for="task1">Complete Q1 reports</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" id="task2" checked>
+                    <label for="task2">Review department budgets</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" id="task3">
+                    <label for="task3">Employee performance reviews</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" id="task4">
+                    <label for="task4">Update org chart</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" id="task5">
+                    <label for="task5">Schedule training session</label>
+                </div>
+                <div class="task-item">
+                    <input type="checkbox" id="task6">
+                    <label for="task6">Prepare board presentation</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Department Performance -->
+    <div class="col-lg-3 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-chart-line"></i> Dept Performance
+            </div>
+            <div class="card-body">
+                <canvas id="performanceChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Employee Distribution by Location -->
+    <div class="col-lg-3 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-map-marker-alt"></i> By Location
+            </div>
+            <div class="card-body">
+                <canvas id="locationChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Skills Matrix & Training Row -->
+<div class="row mb-4">
+    <!-- Skills Matrix Widget -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-tools"></i> Skills Matrix
+            </div>
+            <div class="card-body">
+                <div class="skills-grid">
+                    <div class="skill-item"><span>Python</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+                    <div class="skill-item"><span>JavaScript</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+                    <div class="skill-item"><span>Java</span><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
+                    <div class="skill-item"><span>SQL</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+                    <div class="skill-item"><span>Cloud</span><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+                    <div class="skill-item"><span>DevOps</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+                    <div class="skill-item"><span>ML/AI</span><div class="skill-bar"><div class="skill-fill" style="width:45%"></div></div></div>
+                    <div class="skill-item"><span>Security</span><div class="skill-bar"><div class="skill-fill" style="width:55%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Training Completion Status -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-graduation-cap"></i> Training Status
+            </div>
+            <div class="card-body training-list">
+                <div class="training-item">
+                    <div class="training-info"><span>Cybersecurity Basics</span><span>85%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:85%"></div></div>
+                </div>
+                <div class="training-item">
+                    <div class="training-info"><span>Data Privacy</span><span>72%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:72%"></div></div>
+                </div>
+                <div class="training-item">
+                    <div class="training-info"><span>Leadership Skills</span><span>45%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:45%"></div></div>
+                </div>
+                <div class="training-item">
+                    <div class="training-info"><span>Cloud Computing</span><span>60%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:60%"></div></div>
+                </div>
+                <div class="training-item">
+                    <div class="training-info"><span>Agile Methodology</span><span>90%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:90%"></div></div>
+                </div>
+                <div class="training-item">
+                    <div class="training-info"><span>Communication</span><span>78%</span></div>
+                    <div class="training-bar"><div class="training-fill" style="width:78%"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Dashboard Widgets -->
+<div class="row mb-4">
+    <!-- Top Performers -->
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-trophy"></i> Top Performers
+            </div>
+            <div class="card-body performers-list">
+                <div class="performer-item">
+                    <div class="performer-rank">1</div>
+                    <div class="performer-info">
+                        <strong>Sarah Johnson</strong>
+                        <span>Engineering</span>
+                    </div>
+                    <div class="performer-score">98%</div>
+                </div>
+                <div class="performer-item">
+                    <div class="performer-rank">2</div>
+                    <div class="performer-info">
+                        <strong>Michael Chen</strong>
+                        <span>Marketing</span>
+                    </div>
+                    <div class="performer-score">95%</div>
+                </div>
+                <div class="performer-item">
+                    <div class="performer-rank">3</div>
+                    <div class="performer-info">
+                        <strong>Emily Davis</strong>
+                        <span>Finance</span>
+                    </div>
+                    <div class="performer-score">92%</div>
+                </div>
+                <div class="performer-item">
+                    <div class="performer-rank">4</div>
+                    <div class="performer-info">
+                        <strong>James Wilson</strong>
+                        <span>Operations</span>
+                    </div>
+                    <div class="performer-score">89%</div>
+                </div>
+                <div class="performer-item">
+                    <div class="performer-rank">5</div>
+                    <div class="performer-info">
+                        <strong>Lisa Anderson</strong>
+                        <span>HR</span>
+                    </div>
+                    <div class="performer-score">87%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-calendar-check"></i> Upcoming Events
+            </div>
+            <div class="card-body events-list">
+                {% if events %}
+                    {% for event in events %}
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="event-day">{{ event.start_datetime|date:"d" }}</span>
+                            <span class="event-month">{{ event.start_datetime|date:"M" }}</span>
+                        </div>
+                        <div class="event-info">
+                            <strong>{{ event.title }}</strong>
+                            <span>{{ event.start_datetime|date:"H:i" }} - {{ event.location }}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center text-muted py-4">No upcoming events</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Leave Requests -->
+    <div class="col-lg-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-plane-departure"></i> Leave Requests
+            </div>
+            <div class="card-body leave-list">
+                {% if leave_requests %}
+                    {% for leave in leave_requests %}
+                    <div class="leave-item leave-pending">
+                        <div class="leave-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="leave-info">
+                            <strong>{{ leave.employee__first_name }} {{ leave.employee__last_name }}</strong>
+                            <span>{{ leave.start_date|date:"M d" }} - {{ leave.end_date|date:"M d" }}</span>
+                            <span class="leave-type">{{ leave.leave_type }}</span>
+                        </div>
+                        <div class="leave-actions">
+                            <button class="btn btn-sm btn-success" onclick="handleLeaveRequest({{ leave.id }}, 'APPROVED')"><i class="fas fa-check"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="handleLeaveRequest({{ leave.id }}, 'REJECTED')"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center text-muted py-4">No pending requests</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <!-- Announcements -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-bullhorn"></i> Announcements
+            </div>
+            <div class="card-body announcements-list">
+                {% if announcements %}
+                    {% for announcement in announcements %}
+                    <div class="announcement-item">
+                        <div class="announcement-icon {% if announcement.priority == 'HIGH' %}announcement-new{% endif %}">
+                            <i class="fas {% if announcement.priority == 'URGENT' %}fa-exclamation-triangle{% elif announcement.priority == 'HIGH' %}fa-star{% else %}fa-info-circle{% endif %}"></i>
+                        </div>
+                        <div class="announcement-content">
+                            <strong>{{ announcement.title }}</strong>
+                            <p>{{ announcement.content|truncatechars:80 }}</p>
+                            <small>{{ announcement.created_at|timesince }} ago</small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center text-muted py-4">No announcements</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Status -->
+    <div class="col-lg-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-project-diagram"></i> Project Status
+            </div>
+            <div class="card-body project-list">
+                {% if projects %}
+                    {% for project in projects %}
+                    <div class="project-item">
+                        <div class="project-info">
+                            <strong>{{ project.name }}</strong>
+                            <span>{{ project.team__name }}</span>
+                        </div>
+                        <div class="project-progress">
+                            <div class="progress">
+                                <div class="progress-bar {% if project.progress >= 75 %}bg-success{% elif project.progress >= 50 %}bg-primary{% elif project.progress >= 25 %}bg-warning{% else %}bg-danger{% endif %}" style="width:{{ project.progress }}%">{{ project.progress }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center text-muted py-4">No active projects</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+{% if dashboard_type == 'executive' %}
+// Level Chart
+const levelCtx = document.getElementById('levelChart').getContext('2d');
+new Chart(levelCtx, {
+    type: 'doughnut',
+    data: {
+        labels: Object.keys({{ roles_by_level|safe }}),
+        datasets: [{ data: Object.values({{ roles_by_level|safe }}), backgroundColor: ['#FF6B00','#0B1F3A','#17a2b8','#28a745','#6c757d','#ffc107'], borderWidth: 0 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+});
+
+// Dept Chart
+new Chart(document.getElementById('departmentChart').getContext('2d'), {
+    type: 'bar',
+    data: {
+        labels: {{ departments|safe }}.map(d => d.name),
+        datasets: [{ label: 'Employees', data: {{ departments|safe }}.map(d => d.employee_count), backgroundColor: '#FF6B00', borderRadius: 6 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
+});
+
+// Trend Chart
+new Chart(document.getElementById('trendChart').getContext('2d'), {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{ label: 'New Hires', data: [2, 3, 1, 4, 2, 3], borderColor: '#FF6B00', backgroundColor: 'rgba(255,107,0,0.1)', fill: true, tension: 0.4 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+});
+
+// Calendar
+const today = new Date();
+const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+document.getElementById('calendarMonth').textContent = monthNames[today.getMonth()] + ' ' + today.getFullYear();
+const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+let calendarHTML = '';
+for (let i = 0; i < firstDay; i++) calendarHTML += '<span></span>';
+for (let i = 1; i <= daysInMonth; i++) {
+    const isToday = i === today.getDate() ? 'calendar-today' : '';
+    const dayEl = document.createElement('span');
+    dayEl.textContent = i;
+    if (isToday) dayEl.className = isToday;
+    calendarHTML += dayEl.outerHTML;
+}
+document.getElementById('calendarDays').innerHTML = calendarHTML;
+
+// Performance Chart
+new Chart(document.getElementById('performanceChart').getContext('2d'), {
+    type: 'radar',
+    data: {
+        labels: ['Productivity', 'Attendance', 'Quality', 'Innovation', 'Teamwork'],
+        datasets: [
+            { label: 'Engineering', data: [92, 88, 95, 78, 85], backgroundColor: 'rgba(255,107,0,0.2)', borderColor: '#FF6B00', pointBackgroundColor: '#FF6B00' },
+            { label: 'Marketing', data: [85, 92, 88, 72, 90], backgroundColor: 'rgba(11,31,58,0.2)', borderColor: '#0B1F3A', pointBackgroundColor: '#0B1F3A' }
+        ]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+});
+
+// Location Chart
+new Chart(document.getElementById('locationChart').getContext('2d'), {
+    type: 'doughnut',
+    data: {
+        labels: ['New York', 'San Francisco', 'Chicago', 'Austin', 'Remote'],
+        datasets: [{ data: [25, 20, 15, 12, 28], backgroundColor: ['#FF6B00', '#0B1F3A', '#17a2b8', '#28a745', '#ffc107'], borderWidth: 0 }]
+    },
+    options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+});
+
+function handleLeaveRequest(id, action) {
+    fetch('/api/employees/leave-requests/' + id + '/', {
+        method: 'PATCH',
+        headers: {
+            'X-CSRFToken': '{{ csrf_token }}',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ status: action })
+    })
+    .then(r => r.json())
+    .then(data => {
+        location.reload();
+    });
+}
+{% endif %}
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.dashboard-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; }
+.dashboard-header h2 { margin-bottom: 5px; }
+.header-actions .badge { font-size: 0.75rem; padding: 6px 14px; }
+
+/* Main Stats */
+.stats-row .stat-card { display: flex; align-items: center; padding: 25px; border-radius: 16px; color: white; min-height: 120px; transition: transform 0.2s; }
+.stats-row .stat-card:hover { transform: translateY(-5px); }
+.stat-card-primary { background: linear-gradient(135deg, #FF6B00 0%, #FF8C33 100%); }
+.stat-card-success { background: linear-gradient(135deg, #28a745 0%, #34ce57 100%); }
+.stat-card-secondary { background: linear-gradient(135deg, #0B1F3A 0%, #1a2d4a 100%); }
+.stat-card-info { background: linear-gradient(135deg, #17a2b8 0%, #138496 100%); }
+.stat-card .stat-icon { font-size: 2.5rem; opacity: 0.8; margin-right: 20px; }
+.stat-card .stat-value { font-size: 2.2rem; font-weight: 700; }
+.stat-card .stat-label { font-size: 0.9rem; opacity: 0.9; margin-top: 5px; }
+
+/* Quick Actions */
+.quick-action-btn { display: flex; flex-direction: column; align-items: center; padding: 15px 10px; background: #f8f9fa; border-radius: 12px; text-decoration: none; color: #495057; transition: all 0.2s; }
+.quick-action-btn:hover { background: #FF6B00; color: white; transform: translateY(-3px); }
+.quick-action-btn i { font-size: 1.5rem; margin-bottom: 8px; }
+.quick-action-btn span { font-size: 0.8rem; font-weight: 500; }
+
+/* Charts */
+.charts-row .card-body { height: 280px; padding: 15px; }
+
+/* Mini Stats */
+.mini-stat-card { display: flex; align-items: center; padding: 15px; background: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.mini-stat-card .mini-icon { font-size: 1.5rem; color: #FF6B00; margin-right: 12px; }
+.mini-stat-card .mini-value { font-size: 1.4rem; font-weight: 700; color: #212529; }
+.mini-stat-card .mini-label { font-size: 0.75rem; color: #6c757d; }
+
+/* Activity List */
+.activity-list { max-height: 300px; overflow-y: auto; }
+.activity-item { display: flex; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.activity-item:last-child { border-bottom: none; }
+.activity-item .activity-icon { width: 36px; height: 36px; background: #f8f9fa; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; color: #FF6B00; }
+.activity-item .activity-content { flex: 1; }
+.activity-item .activity-content strong { display: block; font-size: 0.9rem; }
+.activity-item .activity-content p { margin: 3px 0; font-size: 0.85rem; color: #6c757d; }
+.activity-item .activity-time { font-size: 0.75rem; color: #adb5bd; }
+
+/* Notifications */
+.notifications-list { max-height: 300px; overflow-y: auto; }
+.notification-item { display: flex; align-items: center; padding: 12px 15px; margin-bottom: 8px; border-radius: 8px; background: #f8f9fa; }
+.notification-item i { margin-right: 12px; font-size: 1rem; }
+.notification-urgent { background: #fff5f5; color: #dc3545; }
+.notification-urgent i { color: #dc3545; }
+.notification-success { background: #f0fff4; color: #28a745; }
+.notification-success i { color: #28a745; }
+.notification-warning { background: #fffbf0; color: #ffc107; }
+.notification-warning i { color: #ffc107; }
+.notification-info { background: #f0f9ff; color: #17a2b8; }
+.notification-info i { color: #17a2b8; }
+
+/* Empty State */
+.empty-state { text-align: center; padding: 60px 20px; }
+.empty-state i { font-size: 3.5rem; color: #dee2e6; margin-bottom: 15px; }
+.empty-state p { font-size: 1rem; color: #6c757d; margin-bottom: 5px; }
+.empty-state small { font-size: 0.85rem; color: #adb5bd; }
+
+.card-header i { margin-right: 10px; }
+
+/* Calendar Widget */
+.calendar-widget { font-size: 0.85rem; }
+.calendar-header { text-align: center; font-weight: 600; margin-bottom: 15px; color: #0B1F3A; }
+.calendar-weekdays { display: grid; grid-template-columns: repeat(7, 1fr); text-align: center; margin-bottom: 10px; }
+.calendar-weekdays span { font-size: 0.75rem; color: #6c757d; font-weight: 500; }
+.calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+.calendar-days span { padding: 6px; font-size: 0.8rem; }
+.calendar-days span.calendar-today { background: #FF6B00; color: white; border-radius: 50%; font-weight: 600; }
+
+/* Task List */
+.tasks-list { max-height: 280px; overflow-y: auto; }
+.task-item { display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
+.task-item:last-child { border-bottom: none; }
+.task-item input[type="checkbox"] { margin-right: 12px; width: 18px; height: 18px; accent-color: #FF6B00; }
+.task-item label { font-size: 0.85rem; color: #495057; cursor: pointer; }
+.task-item input:checked + label { text-decoration: line-through; color: #adb5bd; }
+
+/* Skills Matrix */
+.skills-grid { display: flex; flex-direction: column; gap: 12px; }
+.skill-item { display: flex; align-items: center; gap: 10px; }
+.skill-item > span { width: 80px; font-size: 0.8rem; font-weight: 500; color: #495057; }
+.skill-bar { flex: 1; height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; }
+.skill-fill { height: 100%; background: linear-gradient(90deg, #FF6B00, #FF8C33); border-radius: 4px; }
+
+/* Training Status */
+.training-list { display: flex; flex-direction: column; gap: 15px; }
+.training-item { }
+.training-info { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 5px; }
+.training-info span:first-child { color: #495057; }
+.training-info span:last-child { font-weight: 600; color: #FF6B00; }
+.training-bar { height: 8px; background: #e9ecef; border-radius: 4px; overflow: hidden; }
+.training-fill { height: 100%; background: linear-gradient(90deg, #0B1F3A, #1a2d4a); border-radius: 4px; }
+
+/* New Widgets Common */
+.col-lg-3 .card-body { height: 280px; padding: 15px; }
+.col-lg-4 .card-body { height: 310px; padding: 15px; }
+.col-lg-6 .card-body { height: 290px; padding: 15px; }
+
+/* Top Performers */
+.performers-list, .events-list, .leave-list { max-height: 300px; overflow-y: auto; }
+.performer-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.performer-item:last-child { border-bottom: none; }
+.performer-rank { width: 28px; height: 28px; background: #FF6B00; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.85rem; margin-right: 12px; }
+.performer-info { flex: 1; }
+.performer-info strong { display: block; font-size: 0.9rem; }
+.performer-info span { font-size: 0.75rem; color: #6c757d; }
+.performer-score { font-weight: 700; color: #28a745; font-size: 1rem; }
+
+/* Events */
+.event-item { display: flex; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.event-item:last-child { border-bottom: none; }
+.event-date { width: 50px; text-align: center; background: #f8f9fa; border-radius: 8px; padding: 8px; margin-right: 12px; }
+.event-day { display: block; font-size: 1.2rem; font-weight: 700; color: #0B1F3A; }
+.event-month { font-size: 0.7rem; color: #6c757d; text-transform: uppercase; }
+.event-info { flex: 1; }
+.event-info strong { display: block; font-size: 0.9rem; }
+.event-info span { font-size: 0.75rem; color: #6c757d; }
+
+/* Leave Requests */
+.leave-item { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.leave-item:last-child { border-bottom: none; }
+.leave-avatar { width: 40px; height: 40px; background: #e9ecef; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; color: #6c757d; }
+.leave-info { flex: 1; }
+.leave-info strong { display: block; font-size: 0.9rem; }
+.leave-info span { display: block; font-size: 0.75rem; color: #6c757d; }
+.leave-type { color: #FF6B00 !important; font-weight: 500; }
+.leave-actions { display: flex; gap: 5px; }
+.leave-actions .btn { width: 30px; height: 30px; padding: 0; }
+
+/* Announcements */
+.announcements-list { max-height: 280px; overflow-y: auto; }
+.announcement-item { display: flex; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.announcement-item:last-child { border-bottom: none; }
+.announcement-icon { width: 36px; height: 36px; background: #e3f2fd; color: #1976d2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; }
+.announcement-icon.announcement-new { background: #fff3e0; color: #f57c00; }
+.announcement-content { flex: 1; }
+.announcement-content strong { display: block; font-size: 0.9rem; }
+.announcement-content p { margin: 3px 0; font-size: 0.8rem; color: #6c757d; }
+.announcement-content small { font-size: 0.7rem; color: #adb5bd; }
+
+/* Project Status */
+.project-list { max-height: 280px; overflow-y: auto; }
+.project-item { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.project-item:last-child { border-bottom: none; }
+.project-info strong { display: block; font-size: 0.9rem; }
+.project-info span { font-size: 0.75rem; color: #6c757d; }
+.project-progress { margin-top: 8px; }
+.project-progress .progress { height: 8px; border-radius: 4px; }
+.project-progress .progress-bar { font-size: 0.7rem; line-height: 8px; }
+</style>
+{% endblock %}
+
+{% block title %}Dashboard - IT Org{% endblock %}
