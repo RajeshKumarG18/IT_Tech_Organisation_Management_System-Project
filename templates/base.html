@@ -52,6 +52,12 @@
                 <a href="{% url 'worklog' %}" class="nav-item {% if 'worklog' in request.path %}active{% endif %}">
                     <i class="fas fa-clock"></i> <span>Work Log</span>
                 </a>
+                <a href="{% url 'schedule' %}" class="nav-item {% if 'schedule' in request.path %}active{% endif %}">
+                    <i class="fas fa-calendar-alt"></i> <span>Schedule</span>
+                </a>
+                <a href="{% url 'reports' %}" class="nav-item {% if 'reports' in request.path %}active{% endif %}">
+                    <i class="fas fa-chart-bar"></i> <span>Reports</span>
+                </a>
                 <a href="{% url 'org-chart' %}" class="nav-item {% if 'org-chart' in request.path %}active{% endif %}">
                     <i class="fas fa-sitemap"></i> <span>Org Chart</span>
                 </a>

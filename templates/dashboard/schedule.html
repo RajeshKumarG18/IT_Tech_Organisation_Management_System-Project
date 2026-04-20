@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %}Schedule - {{ organization_name|default:"IT Org" }}{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1><i class="fas fa-calendar-alt"></i> Schedule</h1>
+        <p>Manage Events and Leave Requests</p>
+    </div>
+    
+    <div class="row">
+        <!-- Upcoming Events -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-calendar"></i> Upcoming Events</h5>
+                </div>
+                <div class="card-body">
+                    {% if events %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Event</th>
+                                        <th>Date</th>
+                                        <th>Location</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for event in events %}
+                                        <tr>
+                                            <td>{{ event.title }}</td>
+                                            <td>{{ event.start_date }}</td>
+                                            <td>{{ event.location|default:"-" }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No upcoming events</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pending Leave Requests -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-plane"></i> Pending Leave Requests</h5>
+                </div>
+                <div class="card-body">
+                    {% if pending_leaves %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Reason</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for leave in pending_leaves %}
+                                        <tr>
+                                            <td>{{ leave.employee.first_name }} {{ leave.employee.last_name }}</td>
+                                            <td>{{ leave.start_date }}</td>
+                                            <td>{{ leave.end_date }}</td>
+                                            <td>{{ leave.reason|truncatechars:30 }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No pending leave requests</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

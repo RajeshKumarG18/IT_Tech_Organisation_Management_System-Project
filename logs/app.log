@@ -2356,3 +2356,285 @@ INFO 2026-04-20 07:06:09,266 basehttp "GET /dashboard/ HTTP/1.1" 200 48232
 INFO 2026-04-20 07:06:09,306 basehttp "GET /media/organization_logos/Indica_Software.jpeg HTTP/1.1" 304 0
 INFO 2026-04-20 07:06:09,307 basehttp "GET /static/css/styles.css HTTP/1.1" 200 20675
 INFO 2026-04-20 07:06:10,023 basehttp "GET /media/organization_logos/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 11:23:00,910 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:23:11,401 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-20 11:23:11,557 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:23:11,837 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:23:12,028 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2026-04-20 11:23:12,081 basehttp "GET /media/organization_logos/Indica_Software.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 11:23:12,778 basehttp "GET /media/organization_logos/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 11:23:32,870 basehttp "GET /admin/ HTTP/1.1" 200 24870
+WARNING 2026-04-20 11:23:33,522 log Not Found: /favicon.ico
+WARNING 2026-04-20 11:23:33,523 basehttp "GET /favicon.ico HTTP/1.1" 404 9943
+INFO 2026-04-20 11:24:00,884 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:24:03,121 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 143
+INFO 2026-04-20 11:24:08,122 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 119
+INFO 2026-04-20 11:24:11,068 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:25:17,694 autoreload /home/dell/IT Tech Organisation Management System/core/urls.py changed, reloading.
+INFO 2026-04-20 11:25:18,602 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:25:28,499 autoreload /home/dell/IT Tech Organisation Management System/core/urls.py changed, reloading.
+INFO 2026-04-20 11:25:29,330 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:25:38,177 autoreload /home/dell/IT Tech Organisation Management System/core/urls.py changed, reloading.
+INFO 2026-04-20 11:25:38,803 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:26:06,947 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:27:04,687 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:27:24,251 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 11:27:27,788 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-20 11:27:27,876 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:27:28,013 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:27:32,822 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 11:27:36,388 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-20 11:27:36,606 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-20 11:27:41,978 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25240
+INFO 2026-04-20 11:27:42,018 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-20 11:27:46,904 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-20 11:27:48,522 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 11:29:04,472 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 11:38:18,577 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 54
+INFO 2026-04-20 11:38:20,711 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 60
+INFO 2026-04-20 11:38:34,597 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 124
+INFO 2026-04-20 11:38:49,370 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 84
+INFO 2026-04-20 11:39:03,537 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:39:03,551 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 11:39:13,037 basehttp "GET /password-reset/ HTTP/1.1" 200 9264
+INFO 2026-04-20 11:39:19,436 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 11:39:45,199 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:39:45,218 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:40:01,561 basehttp "GET /admin/ HTTP/1.1" 200 11439
+INFO 2026-04-20 11:40:07,467 basehttp "GET /admin/accounts/organizationlevel/ HTTP/1.1" 200 12462
+INFO 2026-04-20 11:40:12,813 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 12872
+INFO 2026-04-20 11:40:16,483 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 23204
+INFO 2026-04-20 11:40:16,531 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-20 11:40:16,562 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+WARNING 2026-04-20 11:40:24,090 log Forbidden (Permission denied): /admin/employees/employee/2/change/
+Traceback (most recent call last):
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1841, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1871, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-20 11:40:24,145 basehttp "GET /admin/employees/employee/2/change/ HTTP/1.1" 403 135
+INFO 2026-04-20 11:40:28,636 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 23204
+INFO 2026-04-20 11:40:34,385 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 12872
+INFO 2026-04-20 11:40:39,306 basehttp "GET /admin/accounts/customuser/1/change/ HTTP/1.1" 200 23034
+INFO 2026-04-20 11:40:39,353 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2026-04-20 11:40:43,649 log Forbidden (Permission denied): /admin/employees/employee/1/change/
+Traceback (most recent call last):
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1841, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1871, in _changeform_view
+    raise PermissionDenied
+django.core.exceptions.PermissionDenied
+WARNING 2026-04-20 11:40:43,654 basehttp "GET /admin/employees/employee/1/change/ HTTP/1.1" 403 135
+INFO 2026-04-20 11:40:45,887 basehttp "GET /admin/accounts/customuser/1/change/ HTTP/1.1" 200 23034
+INFO 2026-04-20 11:40:48,125 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 12872
+INFO 2026-04-20 11:40:53,071 basehttp "GET /admin/accounts/organizationlevel/ HTTP/1.1" 200 12462
+INFO 2026-04-20 11:41:01,228 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 12872
+INFO 2026-04-20 11:41:06,890 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:41:10,178 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 12872
+INFO 2026-04-20 11:41:12,033 basehttp "GET /admin/accounts/organizationlevel/ HTTP/1.1" 200 12462
+INFO 2026-04-20 11:41:15,187 basehttp "GET /admin/ HTTP/1.1" 200 11439
+INFO 2026-04-20 11:41:18,381 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:41:22,362 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 124
+INFO 2026-04-20 11:41:25,950 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 126
+INFO 2026-04-20 11:41:27,529 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 92
+INFO 2026-04-20 11:41:29,437 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 103
+INFO 2026-04-20 11:41:43,186 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 99
+INFO 2026-04-20 11:41:49,718 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:43:52,294 basehttp "GET /profile/ HTTP/1.1" 200 16227
+INFO 2026-04-20 11:43:58,379 basehttp "GET /employees/ HTTP/1.1" 200 14939
+INFO 2026-04-20 11:44:04,150 basehttp "GET /worklog/ HTTP/1.1" 200 16904
+INFO 2026-04-20 11:44:07,917 basehttp "GET /org-chart/ HTTP/1.1" 200 19332
+INFO 2026-04-20 11:44:08,280 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19338
+INFO 2026-04-20 11:44:11,016 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:44:13,684 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:44:15,574 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:44:15,588 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 11:44:26,120 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:44:26,150 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+WARNING 2026-04-20 11:44:46,017 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-20 11:44:46,019 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+WARNING 2026-04-20 11:44:48,839 log Unauthorized: /api/employees/notifications/mark_all_read/
+WARNING 2026-04-20 11:44:48,840 basehttp "POST /api/employees/notifications/mark_all_read/ HTTP/1.1" 401 183
+WARNING 2026-04-20 11:44:48,858 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-20 11:44:48,860 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+INFO 2026-04-20 11:51:04,266 basehttp "GET /profile/ HTTP/1.1" 200 16324
+INFO 2026-04-20 11:51:04,332 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2026-04-20 11:51:04,361 basehttp "GET /media/employee_profiles/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 11:51:07,743 basehttp "GET /employees/ HTTP/1.1" 200 15122
+INFO 2026-04-20 11:51:12,107 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 11:51:18,933 basehttp "GET /worklog/ HTTP/1.1" 200 17087
+INFO 2026-04-20 11:51:20,902 basehttp "GET /org-chart/ HTTP/1.1" 200 19515
+INFO 2026-04-20 11:51:21,278 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19521
+INFO 2026-04-20 11:51:36,055 basehttp "GET /worklog/ HTTP/1.1" 200 17087
+INFO 2026-04-20 11:51:40,236 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:51:57,153 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:52:02,043 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:52:04,579 basehttp "GET /org-chart/ HTTP/1.1" 200 19515
+INFO 2026-04-20 11:52:04,974 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19521
+INFO 2026-04-20 11:52:06,808 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:52:13,538 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 78
+INFO 2026-04-20 11:52:21,106 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:52:24,461 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:52:24,473 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 11:52:38,017 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:52:38,071 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:52:47,481 basehttp "GET /org-chart/ HTTP/1.1" 200 19332
+INFO 2026-04-20 11:52:47,971 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19338
+INFO 2026-04-20 11:52:50,435 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:52:55,120 basehttp "GET /dashboard/ HTTP/1.1" 200 48023
+INFO 2026-04-20 11:52:57,746 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:52:57,755 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 11:53:03,219 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-20 11:53:03,237 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 11:53:12,712 basehttp "GET /org-chart/ HTTP/1.1" 200 19515
+INFO 2026-04-20 11:53:13,102 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19521
+INFO 2026-04-20 11:53:17,385 basehttp "GET /employees/ HTTP/1.1" 200 15122
+INFO 2026-04-20 11:53:25,760 basehttp "GET /worklog/ HTTP/1.1" 200 17087
+INFO 2026-04-20 11:53:33,788 basehttp "GET /employees/ HTTP/1.1" 200 15122
+INFO 2026-04-20 11:53:55,591 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 125
+INFO 2026-04-20 11:54:16,521 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 103
+INFO 2026-04-20 11:54:31,724 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 100
+INFO 2026-04-20 11:55:23,206 basehttp "GET /employees/?search=Arun+Kumar&department=&level=&status= HTTP/1.1" 200 15132
+INFO 2026-04-20 11:55:42,653 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 48
+INFO 2026-04-20 11:55:47,895 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 54
+INFO 2026-04-20 11:55:58,121 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 125
+INFO 2026-04-20 11:56:10,081 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 92
+INFO 2026-04-20 11:56:32,086 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 119
+INFO 2026-04-20 11:56:52,943 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 81
+INFO 2026-04-20 11:57:35,853 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 11:57:49,053 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 125
+INFO 2026-04-20 11:57:57,892 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 13:12:58,796 basehttp "GET /profile/ HTTP/1.1" 200 16324
+INFO 2026-04-20 13:12:58,896 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:12:58,899 basehttp "GET /media/organization_logos/Indica_Software.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 13:13:12,274 basehttp "GET /employees/ HTTP/1.1" 200 15122
+INFO 2026-04-20 13:13:19,061 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 13:13:31,751 basehttp "GET /worklog/ HTTP/1.1" 200 17087
+INFO 2026-04-20 13:13:34,327 basehttp "GET /org-chart/ HTTP/1.1" 200 19515
+INFO 2026-04-20 13:13:34,734 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19521
+INFO 2026-04-20 13:13:41,185 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-20 13:13:44,125 basehttp "GET /dashboard/ HTTP/1.1" 200 48226
+INFO 2026-04-20 13:18:08,720 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 60
+INFO 2026-04-20 13:18:40,523 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 48
+INFO 2026-04-20 13:18:53,987 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 60
+INFO 2026-04-20 13:19:06,131 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 100
+INFO 2026-04-20 13:19:28,028 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 105
+INFO 2026-04-20 13:34:28,871 autoreload /home/dell/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-20 13:34:29,557 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 13:34:36,448 autoreload /home/dell/IT Tech Organisation Management System/apps/dashboard/urls.py changed, reloading.
+INFO 2026-04-20 13:34:37,179 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 13:34:46,031 autoreload /home/dell/IT Tech Organisation Management System/apps/dashboard/urls.py changed, reloading.
+INFO 2026-04-20 13:34:46,643 autoreload Watching for file changes with StatReloader
+ERROR 2026-04-20 13:36:52,813 log Internal Server Error: /schedule/
+Traceback (most recent call last):
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/IT Tech Organisation Management System/apps/dashboard/web_views.py", line 35, in schedule_view
+    events = Event.objects.filter(start_date__gte=today).order_by('start_date')[:10]
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1495, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1513, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1523, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1648, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1680, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1528, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1335, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/dell/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1813, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'start_date' into field. Choices are: created_at, created_by, created_by_id, description, end_datetime, event_type, id, location, start_datetime, title
+ERROR 2026-04-20 13:36:52,815 basehttp "GET /schedule/ HTTP/1.1" 500 114165
+INFO 2026-04-20 13:37:38,000 autoreload /home/dell/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-20 13:37:38,717 autoreload Watching for file changes with StatReloader
+INFO 2026-04-20 13:37:47,916 basehttp "GET /schedule/ HTTP/1.1" 200 7929
+INFO 2026-04-20 13:38:01,078 basehttp "GET /reports/ HTTP/1.1" 200 7928
+INFO 2026-04-20 13:39:10,618 basehttp "GET /dashboard/ HTTP/1.1" 200 48531
+INFO 2026-04-20 13:39:11,436 basehttp "GET /media/organization_logos/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-20 13:39:17,557 basehttp "GET /dashboard/ HTTP/1.1" 200 48531
+INFO 2026-04-20 13:39:25,854 basehttp "GET /schedule/ HTTP/1.1" 200 14220
+INFO 2026-04-20 13:39:30,780 basehttp "GET /reports/ HTTP/1.1" 200 14159
+INFO 2026-04-20 13:39:41,354 basehttp "GET /dashboard/ HTTP/1.1" 200 48531
+INFO 2026-04-20 13:42:32,961 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-20 13:42:48,883 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-20 13:43:05,994 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-20 13:43:29,862 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 13:43:44,011 basehttp "GET /login/ HTTP/1.1" 200 12435
+INFO 2026-04-20 13:43:49,727 basehttp "GET /schedule/ HTTP/1.1" 200 7929
+INFO 2026-04-20 13:43:59,249 basehttp "GET /reports/ HTTP/1.1" 200 7928
+INFO 2026-04-20 13:45:17,790 basehttp "GET /dashboard/ HTTP/1.1" 200 48548
+INFO 2026-04-20 13:45:22,580 basehttp "GET /dashboard/ HTTP/1.1" 200 48548
+INFO 2026-04-20 13:45:24,149 basehttp "GET /dashboard/ HTTP/1.1" 200 48548
+INFO 2026-04-20 13:45:26,859 basehttp "GET /schedule/ HTTP/1.1" 200 14220
+INFO 2026-04-20 13:45:29,816 basehttp "GET /dashboard/ HTTP/1.1" 200 48548
+INFO 2026-04-20 13:45:32,792 basehttp "GET /reports/ HTTP/1.1" 200 14159
+INFO 2026-04-20 13:45:40,600 basehttp "GET /worklog/ HTTP/1.1" 200 17392
+INFO 2026-04-20 13:45:45,651 basehttp "GET /employees/ HTTP/1.1" 200 15427
+INFO 2026-04-20 13:45:53,220 basehttp "GET /admin/ HTTP/1.1" 200 24870
+INFO 2026-04-20 13:45:53,299 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,300 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,301 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,301 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,301 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,301 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,578 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,594 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,595 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,595 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-04-20 13:45:53,596 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-20 13:46:10,236 basehttp "GET /org-chart/ HTTP/1.1" 200 19820
+INFO 2026-04-20 13:46:10,632 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19826
+INFO 2026-04-20 13:46:30,277 basehttp "GET /dashboard/ HTTP/1.1" 200 48548

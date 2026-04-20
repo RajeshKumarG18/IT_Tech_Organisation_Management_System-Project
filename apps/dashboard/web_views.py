@@ -26,6 +26,47 @@ def logout_view(request):
     return redirect('login')
 
 
+def schedule_view(request):
+    """Schedule management view"""
+    from apps.employees.models import Event, LeaveRequest
+    from datetime import datetime
+    
+    today = timezone.now().date()
+    events = Event.objects.filter(start_datetime__date__gte=today).order_by('start_datetime')[:10]
+    pending_leaves = LeaveRequest.objects.filter(status='PENDING').order_by('start_date')[:10]
+    
+    context = {
+        'title': 'Schedule',
+        'events': events,
+        'pending_leaves': pending_leaves,
+    }
+    return render(request, 'dashboard/schedule.html', context)
+
+
+def reports_view(request):
+    """Reports view"""
+    from apps.employees.models import Employee, WorkLog
+    from apps.departments.models import Department
+    from apps.roles.models import Role
+    from django.db.models import Count
+    
+    total_employees = Employee.objects.count()
+    active_employees = Employee.objects.filter(status='ACTIVE').count()
+    total_departments = Department.objects.count()
+    total_roles = Role.objects.count()
+    recent_worklogs = WorkLog.objects.order_by('-date')[:20]
+    
+    context = {
+        'title': 'Reports',
+        'total_employees': total_employees,
+        'active_employees': active_employees,
+        'total_departments': total_departments,
+        'total_roles': total_roles,
+        'recent_worklogs': recent_worklogs,
+    }
+    return render(request, 'dashboard/reports.html', context)
+
+
 def candidate_logout_view(request):
     logout(request)
     return redirect('candidate-login')
