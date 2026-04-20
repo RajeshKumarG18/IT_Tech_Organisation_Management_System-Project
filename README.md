@@ -269,3 +269,5 @@ MIT License - See LICENSE file for details.
 
 IT Tech Organisation Management System
 Built with Django + DRF + Bootstrap + D3.js
+
+# IT_Tech_Organisation_Management_System-Project
