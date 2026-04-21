@@ -23,16 +23,36 @@
                                 <thead>
                                     <tr>
                                         <th>Event</th>
-                                        <th>Date</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
                                         <th>Location</th>
+                                        <th>Meeting Link</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {% for event in events %}
                                         <tr>
-                                            <td>{{ event.title }}</td>
-                                            <td>{{ event.start_date }}</td>
+                                            <td><strong>{{ event.title }}</strong><br><small class="text-muted">{{ event.get_event_type_display }}</small></td>
+                                            <td>{{ event.start_datetime|date:"M d, Y" }}<br><small>{{ event.start_datetime|date:"H:i" }} - {{ event.end_datetime|date:"H:i" }}</small></td>
+                                            <td>
+                                                {% if event.time_status == 'SCHEDULED' %}
+                                                    <span class="badge bg-primary">Scheduled</span>
+                                                {% elif event.time_status == 'IN_PROGRESS' %}
+                                                    <span class="badge bg-success"><i class="fas fa-circle"></i> Live Now</span>
+                                                {% else %}
+                                                    <span class="badge bg-secondary">Completed</span>
+                                                {% endif %}
+                                            </td>
                                             <td>{{ event.location|default:"-" }}</td>
+                                            <td>
+                                                {% if event.time_status == 'IN_PROGRESS' and event.meeting_link %}
+                                                    <a href="{{ event.meeting_link }}" target="_blank" class="btn btn-sm btn-success"><i class="fas fa-video"></i> Join Now</a>
+                                                {% elif event.time_status == 'SCHEDULED' and event.meeting_link %}
+                                                    <a href="{{ event.meeting_link }}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-video"></i> Join</a>
+                                                {% else %}
+                                                    <span class="text-muted">-</span>
+                                                {% endif %}
+                                            </td>
                                         </tr>
                                     {% endfor %}
                                 </tbody>

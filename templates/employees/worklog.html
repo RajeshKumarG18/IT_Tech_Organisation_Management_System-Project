@@ -4,27 +4,29 @@
 <div class="row mb-4">
     <div class="col-12">
         <h2><i class="fas fa-clock"></i> My Work Log</h2>
-        <p class="text-muted">Record your daily work activities</p>
+        <p class="text-muted">Complete all steps below in order</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-lg-8">
-        <div class="card">
+        <!-- Step 1: Work Details -->
+        <div class="card mb-4">
             <div class="card-header">
+                <span class="badge bg-primary me-2">Step 1</span>
                 <i class="fas fa-plus"></i> Add Work Log Entry
             </div>
             <div class="card-body">
-                <form method="post" action="{% url 'worklog-create' %}">
+                <form id="worklog-form">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Date</label>
-                            <input type="date" name="date" class="form-control" value="{{ today }}" required>
+                            <input type="date" name="date" id="work-date" class="form-control" value="{{ today }}" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Work Mode</label>
-                            <select name="work_mode" class="form-select" required>
+                            <select name="work_mode" id="work-mode" class="form-select" required>
                                 <option value="">Select Mode</option>
                                 <option value="OFFICE">Office</option>
                                 <option value="REMOTE">Remote</option>
@@ -35,16 +37,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Project</label>
-                            <input type="text" name="project" class="form-control" placeholder="Enter project name" required>
+                            <input type="text" name="project" id="work-project" class="form-control" placeholder="Enter project name" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">Feature</label>
-                            <input type="text" name="feature" class="form-control" placeholder="Enter feature/task">
+                            <input type="text" name="feature" id="work-feature" class="form-control" placeholder="Enter feature/task">
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>
-                        <select name="category" class="form-select" required>
+                        <select name="category" id="work-category" class="form-select" required>
                             <option value="">Select Category</option>
                             <option value="DEVELOPMENT">Development</option>
                             <option value="MEETING">Meeting</option>
@@ -60,16 +62,68 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Work Description</label>
-                        <textarea name="work_description" class="form-control" rows="3" placeholder="Describe your work..." required></textarea>
+                        <textarea name="work_description" id="work-description" class="form-control" rows="3" placeholder="Describe your work..." required></textarea>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Duration (hours)</label>
-                        <input type="number" name="duration_hours" class="form-control" min="0.5" max="24" step="0.5" value="8" required>
+                        <input type="number" name="duration_hours" id="work-duration" class="form-control" min="0.5" max="24" step="0.5" value="8" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="fas fa-save"></i> Save Work Log
-                    </button>
                 </form>
+            </div>
+        </div>
+
+        <!-- Step 2: Check Out -->
+        <div class="card mb-4" id="checkout-section">
+            <div class="card-header">
+                <span class="badge bg-warning text-dark me-2">Step 2</span>
+                <i class="fas fa-camera"></i> Capture Photo & Check Out
+            </div>
+            <div class="card-body text-center">
+                {% if attendance %}
+                    <p><strong>Check In:</strong> {{ attendance.check_in|time:"H:i" }}</p>
+                    {% if attendance.check_in_photo %}
+                        <img src="{{ attendance.check_in_photo.url }}" alt="Check In Photo" class="img-thumbnail mb-2" style="max-width: 150px;">
+                    {% endif %}
+                    {% if not attendance.check_out %}
+                        <div class="camera-capture" id="camera-checkout">
+                            <video id="video-checkout" autoplay playsinline style="display: none;"></video>
+                            <canvas id="canvas-checkout" style="display: none;"></canvas>
+                            <img id="photo-checkout-preview" class="img-thumbnail" style="display: none; max-width: 100%;">
+                            <div class="mt-2">
+                                <button type="button" id="start-camera-checkout" class="btn btn-outline-primary">
+                                    <i class="fas fa-camera"></i> Open Camera
+                                </button>
+                                <button type="button" id="capture-checkout" class="btn btn-danger" style="display: none;">
+                                    <i class="fas fa-camera"></i> Capture Photo
+                                </button>
+                                <button type="button" id="retake-checkout" class="btn btn-secondary" style="display: none;">
+                                    <i class="fas fa-redo"></i> Retake
+                                </button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="check_out_photo" id="check-out-photo-input">
+                        <div id="checkout-error" class="text-danger small mt-2" style="display: none;">Please capture your photo first</div>
+                    {% endif %}
+                {% else %}
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Please Check In first before Check Out
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Step 3: Save -->
+        <div class="card" id="save-section">
+            <div class="card-header">
+                <span class="badge bg-success me-2">Step 3</span>
+                <i class="fas fa-save"></i> Save Work Log
+            </div>
+            <div class="card-body text-center">
+                <p class="text-muted mb-3">After completing Step 1 & Step 2, click below to save</p>
+                <button type="button" id="save-worklog" class="btn btn-success btn-lg" disabled>
+                    <i class="fas fa-save"></i> Save Work Log & Check Out
+                </button>
+                <div id="save-error" class="text-danger small mt-2" style="display: none;">Please complete all steps</div>
             </div>
         </div>
     </div>
@@ -82,25 +136,27 @@
             <div class="card-body text-center">
                 {% if attendance %}
                     <p><strong>Check In:</strong> {{ attendance.check_in|time:"H:i" }}</p>
+                    {% if attendance.check_in_photo %}
+                        <img src="{{ attendance.check_in_photo.url }}" alt="Check In Photo" class="img-thumbnail mb-2" style="max-width: 120px;">
+                    {% endif %}
                     {% if attendance.check_out %}
+                        <hr>
                         <p><strong>Check Out:</strong> {{ attendance.check_out|time:"H:i" }}</p>
+                        {% if attendance.check_out_photo %}
+                            <img src="{{ attendance.check_out_photo.url }}" alt="Check Out Photo" class="img-thumbnail mb-2" style="max-width: 120px;">
+                        {% endif %}
+                        <div class="alert alert-success mt-2">
+                            <i class="fas fa-check-circle"></i> Attendance completed!
+                        </div>
                     {% else %}
-                        <form method="post" action="{% url 'attendance-checkout' %}" enctype="multipart/form-data" class="mb-2">
-                            {% csrf_token %}
-                            <input type="file" name="check_out_photo" accept="image/*" capture="user" class="form-control mb-2" required>
-                            <button type="submit" class="btn btn-danger">
-                                <i class="fas fa-sign-out-alt"></i> Check Out
-                            </button>
-                        </form>
+                        <div class="alert alert-info mt-2">
+                            <i class="fas fa-info-circle"></i> Complete Step 2 to Check Out
+                        </div>
                     {% endif %}
                 {% else %}
-                    <form method="post" action="{% url 'attendance-checkin' %}" enctype="multipart/form-data" class="mb-2">
-                        {% csrf_token %}
-                        <input type="file" name="check_in_photo" accept="image/*" capture="user" class="form-control mb-2" required>
-                        <button type="submit" class="btn btn-success">
-                            <i class="fas fa-sign-in-alt"></i> Check In (with Photo)
-                        </button>
-                    </form>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle"></i> Not checked in yet
+                    </div>
                 {% endif %}
             </div>
         </div>
@@ -123,4 +179,194 @@
         </div>
     </div>
 </div>
+
+<script>
+let streamCheckout = null;
+let checkoutPhotoData = null;
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Page loaded');
+    
+    // Check if work form is filled
+    function checkFormFilled() {
+        const date = document.getElementById('work-date').value;
+        const mode = document.getElementById('work-mode').value;
+        const project = document.getElementById('work-project').value;
+        const category = document.getElementById('work-category').value;
+        const description = document.getElementById('work-description').value;
+        const duration = document.getElementById('work-duration').value;
+        
+        return date && mode && project && category && description && duration;
+    }
+    
+    // Enable/disable save button based on form and photo
+    function updateSaveButton() {
+        const canSave = checkFormFilled() && checkoutPhotoData;
+        document.getElementById('save-worklog').disabled = !canSave;
+        return canSave;
+    }
+    
+    // Add input listeners to enable save when form is complete
+    ['work-date', 'work-mode', 'work-project', 'work-category', 'work-description', 'work-duration'].forEach(id => {
+        document.getElementById(id).addEventListener('input', updateSaveButton);
+    });
+    
+    // Camera functions
+    const startBtn = document.getElementById('start-camera-checkout');
+    if (startBtn) {
+        startBtn.addEventListener('click', async function() {
+            console.log('Opening camera...');
+            try {
+                streamCheckout = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+                document.getElementById('video-checkout').srcObject = streamCheckout;
+                document.getElementById('video-checkout').style.display = 'block';
+                document.getElementById('photo-checkout-preview').style.display = 'none';
+                startBtn.style.display = 'none';
+                document.getElementById('capture-checkout').style.display = 'inline-block';
+            } catch (err) {
+                console.error('Camera error:', err);
+                alert('Could not access camera: ' + err.message);
+            }
+        });
+    }
+    
+    const captureBtn = document.getElementById('capture-checkout');
+    if (captureBtn) {
+        captureBtn.addEventListener('click', function() {
+            const video = document.getElementById('video-checkout');
+            const canvas = document.getElementById('canvas-checkout');
+            const preview = document.getElementById('photo-checkout-preview');
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            
+            checkoutPhotoData = canvas.toDataURL('image/jpeg', 0.9);
+            preview.src = checkoutPhotoData;
+            preview.style.display = 'block';
+            video.style.display = 'none';
+            
+            captureBtn.style.display = 'none';
+            document.getElementById('retake-checkout').style.display = 'inline-block';
+            document.getElementById('check-out-photo-input').value = checkoutPhotoData;
+            
+            if (streamCheckout) {
+                streamCheckout.getTracks().forEach(track => track.stop());
+                streamCheckout = null;
+            }
+            
+            updateSaveButton();
+        });
+    }
+    
+    const retakeBtn = document.getElementById('retake-checkout');
+    if (retakeBtn) {
+        retakeBtn.addEventListener('click', async function() {
+            document.getElementById('photo-checkout-preview').style.display = 'none';
+            retakeBtn.style.display = 'none';
+            document.getElementById('check-out-photo-input').value = '';
+            checkoutPhotoData = null;
+            document.getElementById('save-worklog').disabled = true;
+            
+            try {
+                streamCheckout = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+                document.getElementById('video-checkout').srcObject = streamCheckout;
+                document.getElementById('video-checkout').style.display = 'block';
+                document.getElementById('capture-checkout').style.display = 'inline-block';
+            } catch (err) {
+                alert('Could not access camera: ' + err.message);
+            }
+        });
+    }
+    
+    // Save Work Log
+    document.getElementById('save-worklog').addEventListener('click', function() {
+        if (!checkFormFilled()) {
+            document.getElementById('save-error').style.display = 'block';
+            document.getElementById('save-error').textContent = 'Please fill all work details in Step 1';
+            return;
+        }
+        
+        if (!checkoutPhotoData) {
+            document.getElementById('save-error').style.display = 'block';
+            document.getElementById('save-error').textContent = 'Please capture your photo in Step 2';
+            return;
+        }
+        
+        // Create form data for work log
+        const formData = new FormData();
+        formData.append('date', document.getElementById('work-date').value);
+        formData.append('work_mode', document.getElementById('work-mode').value);
+        formData.append('project', document.getElementById('work-project').value);
+        formData.append('feature', document.getElementById('work-feature').value);
+        formData.append('category', document.getElementById('work-category').value);
+        formData.append('work_description', document.getElementById('work-description').value);
+        formData.append('duration_hours', document.getElementById('work-duration').value);
+        formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+        
+        // First save work log
+        fetch('{% url "worklog-create" %}', {
+            method: 'POST',
+            body: formData
+        }).then(response => {
+            // Then check out with photo
+            const checkoutFormData = new FormData();
+            checkoutFormData.append('check_out_photo', dataURItoBlob(checkoutPhotoData), 'checkout.jpg');
+            checkoutFormData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            
+            return fetch('{% url "attendance-checkout" %}', {
+                method: 'POST',
+                body: checkoutFormData
+            });
+        }).then(response => {
+            if (response.ok) {
+                alert('Work log saved and Check Out completed!');
+                location.reload();
+            } else {
+                alert('Some error occurred. Please try again.');
+            }
+        }).catch(err => {
+            console.error('Error:', err);
+            alert('Error: ' + err.message);
+        });
+    });
+});
+
+function dataURItoBlob(dataURI) {
+    const byteString = atob(dataURI.split(',')[1]);
+    const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+    const ab = new ArrayBuffer(byteString.length);
+    const ia = new Uint8Array(ab);
+    for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ab], { type: mimeString });
+}
+</script>
+
+<style>
+.card-header .badge { font-size: 0.75rem; }
+.camera-capture {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px dashed #dee2e6;
+    max-width: 320px;
+    margin: 0 auto;
+}
+.camera-capture video,
+.camera-capture img {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+}
+.camera-capture .btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+#save-worklog:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+</style>
 {% endblock %}

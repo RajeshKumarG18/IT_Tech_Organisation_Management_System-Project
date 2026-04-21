@@ -33,11 +33,22 @@ class WorkLogAdmin(admin.ModelAdmin):
 
 @admin.register(Attendance)
 class AttendanceAdmin(admin.ModelAdmin):
-    list_display = ['employee', 'date', 'check_in', 'check_out', 'status']
+    list_display = ['employee', 'date', 'check_in', 'check_out', 'status', 'has_checkin_photo', 'has_checkout_photo']
     list_filter = ['date', 'status']
     search_fields = ['employee__first_name', 'employee__last_name']
     date_hierarchy = 'date'
     raw_id_fields = ['employee']
+    readonly_fields = ['check_in_photo', 'check_out_photo']
+    
+    def has_checkin_photo(self, obj):
+        return bool(obj.check_in_photo)
+    has_checkin_photo.boolean = True
+    has_checkin_photo.short_description = 'Check In Photo'
+    
+    def has_checkout_photo(self, obj):
+        return bool(obj.check_out_photo)
+    has_checkout_photo.boolean = True
+    has_checkout_photo.short_description = 'Check Out Photo'
 
 
 @admin.register(Notification)
@@ -66,10 +77,22 @@ class AnnouncementAdmin(admin.ModelAdmin):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['title', 'event_type', 'location', 'start_datetime']
-    list_filter = ['event_type']
-    search_fields = ['title', 'location']
+    list_display = ['title', 'event_type', 'time_status', 'location', 'meeting_link', 'start_datetime']
+    list_filter = ['event_type', 'status']
+    search_fields = ['title', 'location', 'meeting_link']
     date_hierarchy = 'start_datetime'
+    readonly_fields = ['time_status']
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'description', 'event_type')
+        }),
+        ('Location & Link', {
+            'fields': ('location', 'meeting_link')
+        }),
+        ('Date & Time', {
+            'fields': ('start_datetime', 'end_datetime', 'status', 'time_status')
+        }),
+    )
 
 
 @admin.register(Project)

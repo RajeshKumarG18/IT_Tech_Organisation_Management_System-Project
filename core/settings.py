@@ -170,3 +170,9 @@ LOGGING = {
         },
     },
 }
+
+# LLM Configuration for ChatBot
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY', '')
+LLM_MODEL = os.getenv('LLM_MODEL', 'gpt-3.5-turbo')
+LLM_TEMPERATURE = float(os.getenv('LLM_TEMPERATURE', '0.7'))
+LLM_MAX_TOKENS = int(os.getenv('LLM_MAX_TOKENS', '500'))

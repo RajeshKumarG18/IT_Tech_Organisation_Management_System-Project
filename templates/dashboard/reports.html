@@ -93,5 +93,143 @@
             {% endif %}
         </div>
     </div>
+    
+    <!-- Meetings / Events Section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-video"></i> Upcoming Meetings <span class="badge bg-primary">{{ upcoming_meetings|length }}</span></h5>
+                </div>
+                <div class="card-body">
+                    {% if upcoming_meetings %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
+                                        <th>Location</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for meeting in upcoming_meetings %}
+                                        <tr>
+                                            <td><strong>{{ meeting.title }}</strong><br><small class="text-muted">{{ meeting.get_event_type_display }}</small></td>
+                                            <td>{{ meeting.start_datetime|date:"M d, H:i" }}</td>
+                                            <td>
+                                                {% if meeting.time_status == 'IN_PROGRESS' %}
+                                                    <span class="badge bg-success"><i class="fas fa-circle"></i> Live</span>
+                                                {% else %}
+                                                    <span class="badge bg-primary">{{ meeting.get_status_display }}</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ meeting.location|default:"TBD" }}</td>
+                                            <td>
+                                                {% if meeting.time_status == 'IN_PROGRESS' and meeting.meeting_link %}
+                                                    <a href="{{ meeting.meeting_link }}" target="_blank" class="btn btn-sm btn-success"><i class="fas fa-video"></i> Join Now</a>
+                                                {% elif meeting.meeting_link %}
+                                                    <a href="{{ meeting.meeting_link }}" target="_blank" class="btn btn-sm btn-outline-primary"><i class="fas fa-video"></i> Join</a>
+                                                {% else %}
+                                                    <span class="text-muted">-</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No upcoming meetings</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-history"></i> Past Meetings <span class="badge bg-secondary">{{ past_meetings|length }}</span></h5>
+                </div>
+                <div class="card-body">
+                    {% if past_meetings %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Date & Time</th>
+                                        <th>Status</th>
+                                        <th>Location</th>
+                                        <th>Created By</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for meeting in past_meetings %}
+                                        <tr>
+                                            <td><strong>{{ meeting.title }}</strong><br><small class="text-muted">{{ meeting.get_event_type_display }}</small></td>
+                                            <td>{{ meeting.start_datetime|date:"M d, H:i" }}</td>
+                                            <td><span class="badge bg-secondary">Completed</span></td>
+                                            <td>{{ meeting.location|default:"TBD" }}</td>
+                                            <td>{{ meeting.created_by|default:"-" }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-muted">No past meetings</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Meeting Stats -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5><i class="fas fa-chart-line"></i> Meeting Statistics</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <h2 class="text-primary">{{ total_meetings }}</h2>
+                                <p>Total Meetings</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <h2 class="text-secondary">{{ upcoming_meetings|length }}</h2>
+                                <p>Upcoming</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <h2 class="text-success">{{ live_meetings|default:0 }}</h2>
+                                <p>Live Now</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stat-box">
+                                <h2 class="text-muted">{{ past_meetings|length }}</h2>
+                                <p>Completed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<style>
+.stat-box { padding: 20px; }
+.stat-box h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 5px; }
+.stat-box p { color: #6c757d; margin-bottom: 0; }
+</style>
 {% endblock %}

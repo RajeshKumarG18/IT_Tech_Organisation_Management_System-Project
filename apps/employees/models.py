@@ -357,12 +357,29 @@ class Announcement(models.Model):
 
 
 class Event(models.Model):
+    EVENT_TYPES = [
+        ('MEETING', 'Meeting'),
+        ('TRAINING', 'Training'),
+        ('EVENT', 'Company Event'),
+        ('HOLIDAY', 'Holiday'),
+        ('OTHER', 'Other'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('SCHEDULED', 'Scheduled'),
+        ('IN_PROGRESS', 'In Progress'),
+        ('COMPLETED', 'Completed'),
+        ('CANCELLED', 'Cancelled'),
+    ]
+    
     title = models.CharField(max_length=200)
-    description = models.TextField()
-    event_type = models.CharField(max_length=50, default='MEETING')
-    location = models.CharField(max_length=200)
+    description = models.TextField(blank=True, default='')
+    event_type = models.CharField(max_length=50, choices=EVENT_TYPES, default='MEETING')
+    location = models.CharField(max_length=200, blank=True, default='')
+    meeting_link = models.URLField(max_length=500, blank=True, default='', help_text='URL for meeting (Google Meet, Zoom, etc.)')
     start_datetime = models.DateTimeField()
     end_datetime = models.DateTimeField()
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='SCHEDULED', help_text='Auto-updated based on time')
     created_by = models.ForeignKey('accounts.CustomUser', on_delete=models.SET_NULL, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -371,6 +388,30 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def time_status(self):
+        """Auto-determine status based on current time"""
+        from django.utils import timezone
+        now = timezone.now()
+        if now < self.start_datetime:
+            return 'SCHEDULED'
+        elif now >= self.start_datetime and now <= self.end_datetime:
+            return 'IN_PROGRESS'
+        else:
+            return 'COMPLETED'
+    
+    @property
+    def is_upcoming(self):
+        return self.time_status == 'SCHEDULED'
+    
+    @property
+    def is_in_progress(self):
+        return self.time_status == 'IN_PROGRESS'
+    
+    @property
+    def is_completed(self):
+        return self.time_status == 'COMPLETED'
 
 
 class Project(models.Model):

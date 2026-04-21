@@ -234,10 +234,15 @@ class AnnouncementSerializer(serializers.ModelSerializer):
 
 
 class EventSerializer(serializers.ModelSerializer):
+    created_by_name = serializers.SerializerMethodField()
+    
     class Meta:
         model = Event
-        fields = ['id', 'title', 'description', 'event_type', 'location', 'start_datetime', 'end_datetime', 'created_at']
+        fields = ['id', 'title', 'description', 'event_type', 'location', 'meeting_link', 'start_datetime', 'end_datetime', 'created_by', 'created_by_name', 'created_at']
         read_only_fields = ['created_at']
+    
+    def get_created_by_name(self, obj):
+        return obj.created_by.get_full_name() if obj.created_by else None
 
 
 class ProjectSerializer(serializers.ModelSerializer):

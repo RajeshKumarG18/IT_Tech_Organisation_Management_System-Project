@@ -17,7 +17,7 @@
         <div class="card-body">
             {% if messages %}
                 {% for message in messages %}
-                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    <div class="alert alert-{{ message.tags }} {% if message.tags == 'error' %}alert-danger{% endif %}">{{ message }}</div>
                 {% endfor %}
             {% endif %}
             
@@ -169,6 +169,20 @@ function togglePassword() {
 .login-card .btn-outline-secondary:hover {
     background: #f8f9fa;
     color: #333;
+}
+
+.login-card .alert-danger {
+    background-color: #fee2e2;
+    border-color: #fecaca;
+    color: #dc2626;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-weight: 500;
+    border-left: 4px solid #dc2626;
+}
+
+.login-card .alert-danger i {
+    margin-right: 8px;
 }
 </style>
 {% endblock %}

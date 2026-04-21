@@ -45,16 +45,24 @@ def schedule_view(request):
 
 def reports_view(request):
     """Reports view"""
-    from apps.employees.models import Employee, WorkLog
+    from apps.employees.models import Employee, WorkLog, Event
     from apps.departments.models import Department
     from apps.roles.models import Role
     from django.db.models import Count
+    from django.utils import timezone
     
     total_employees = Employee.objects.count()
     active_employees = Employee.objects.filter(status='ACTIVE').count()
     total_departments = Department.objects.count()
     total_roles = Role.objects.count()
     recent_worklogs = WorkLog.objects.order_by('-date')[:20]
+    
+    # Get upcoming and past meetings
+    now = timezone.now()
+    upcoming_meetings = Event.objects.filter(start_datetime__gte=now).order_by('start_datetime')[:10]
+    past_meetings = Event.objects.filter(end_datetime__lt=now).order_by('-start_datetime')[:10]
+    live_meetings = Event.objects.filter(start_datetime__lte=now, end_datetime__gte=now).count()
+    total_meetings = Event.objects.count()
     
     context = {
         'title': 'Reports',
@@ -63,6 +71,10 @@ def reports_view(request):
         'total_departments': total_departments,
         'total_roles': total_roles,
         'recent_worklogs': recent_worklogs,
+        'upcoming_meetings': upcoming_meetings,
+        'past_meetings': past_meetings,
+        'live_meetings': live_meetings,
+        'total_meetings': total_meetings,
     }
     return render(request, 'dashboard/reports.html', context)
 
@@ -339,22 +351,32 @@ def worklog_view(request):
     if request.method == 'POST':
         from apps.employees.models import WorkLog
         from datetime import timedelta
+        from django.http import JsonResponse
         
-        hours = float(request.POST.get('duration_hours', 8))
-        duration = timedelta(hours=hours)
-        
-        WorkLog.objects.create(
-            employee=request.user.employee,
-            date=request.POST.get('date'),
-            project=request.POST.get('project'),
-            feature=request.POST.get('feature', ''),
-            category=request.POST.get('category'),
-            work_description=request.POST.get('work_description'),
-            duration=duration,
-            work_mode=request.POST.get('work_mode')
-        )
-        messages.success(request, 'Work log saved successfully!')
-        return redirect('worklog')
+        try:
+            hours = float(request.POST.get('duration_hours', 8))
+            duration = timedelta(hours=hours)
+            
+            WorkLog.objects.create(
+                employee=request.user.employee,
+                date=request.POST.get('date'),
+                project=request.POST.get('project'),
+                feature=request.POST.get('feature', ''),
+                category=request.POST.get('category'),
+                work_description=request.POST.get('work_description'),
+                duration=duration,
+                work_mode=request.POST.get('work_mode')
+            )
+            
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': True, 'message': 'Work log saved successfully!'})
+            
+            messages.success(request, 'Work log saved successfully!')
+        except Exception as e:
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'error': str(e)}, status=400)
+            messages.error(request, f'Error: {str(e)}')
+            return redirect('worklog')
     
     recent_logs = WorkLog.objects.filter(
         employee=request.user.employee
@@ -529,7 +551,20 @@ def chatbot_api(request):
     if not message:
         return JsonResponse({'response': 'Hello! How can I help you?'})
     
-    response_text = OrganizationChatBot.get_response(message, request.user)
+    conversation_history = None
+    if request.user.is_authenticated:
+        recent_conversations = ChatBotConversation.objects.filter(
+            user=request.user
+        ).order_by('-created_at')[:5]
+        conversation_history = [
+            {'message': c.user_message, 'is_user': True}
+            for c in recent_conversations
+        ] + [
+            {'message': c.bot_response, 'is_user': False}
+            for c in recent_conversations
+        ]
+    
+    response_text = OrganizationChatBot.get_response(message, request.user, conversation_history)
     
     if request.user.is_authenticated:
         ChatBotConversation.objects.create(
@@ -538,7 +573,7 @@ def chatbot_api(request):
             bot_response=response_text
         )
     
-    return JsonResponse({'response': response_text})
+    return JsonResponse({'response': response_text, 'llm_enabled': OrganizationChatBot.LLM_ENABLED})
 
 
 @api_view(['GET'])
