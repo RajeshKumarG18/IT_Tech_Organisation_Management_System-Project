@@ -274,7 +274,7 @@ python3 manage.py runserver
 
 | Role | Username | Password |
 |------|----------|----------|
-| Admin | admin | admin123 |
+| Admin |  |  |
 
 ---
 
