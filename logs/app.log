@@ -3338,3 +3338,5 @@ INFO 2026-04-21 14:03:48,585 basehttp "GET /worklog/ HTTP/1.1" 302 0
 INFO 2026-04-21 14:05:50,789 basehttp "GET /worklog/ HTTP/1.1" 200 28276
 INFO 2026-04-21 14:05:50,850 basehttp "GET /media/organization_logos/Indica_Software_logo_6Tr60xY.jpeg HTTP/1.1" 304 0
 INFO 2026-04-21 14:05:50,852 basehttp "GET /media/attendance/photos/checkin.jpg HTTP/1.1" 304 0
+INFO 2026-04-22 11:21:39,249 autoreload Watching for file changes with StatReloader
+INFO 2026-04-22 14:41:24,415 autoreload Watching for file changes with StatReloader
