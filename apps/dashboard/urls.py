@@ -1,7 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import DashboardViewSet, org_chart_data, reports_structure
-from .web_views import dashboard_view, logout_view, org_chart_view, employees_list_view, custom_login_view, worklog_view, attendance_checkin, attendance_checkout, candidate_apply_view, candidate_login_view, candidate_test_view, candidate_logout_view, profile_view, chatbot_api, chatbot_history, schedule_view, reports_view
+from .web_views import dashboard_view, logout_view, org_chart_view, employees_list_view, custom_login_view, worklog_view, attendance_checkin, attendance_checkout, candidate_apply_view, candidate_login_view, candidate_test_view, candidate_logout_view, profile_view, chatbot_api, chatbot_history, schedule_view, reports_view, password_change_view
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('reports/', reports_view, name='reports'),
     path('attendance/checkin/', attendance_checkin, name='attendance-checkin'),
     path('attendance/checkout/', attendance_checkout, name='attendance-checkout'),
+    path('password-change/', password_change_view, name='password-change'),
     
     # Recruitment / Candidate views
     path('candidate/apply/', candidate_apply_view, name='candidate-apply'),

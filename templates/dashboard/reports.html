@@ -122,8 +122,12 @@
                                             <td>
                                                 {% if meeting.time_status == 'IN_PROGRESS' %}
                                                     <span class="badge bg-success"><i class="fas fa-circle"></i> Live</span>
+                                                {% elif meeting.time_status == 'SCHEDULED' %}
+                                                    <span class="badge bg-primary">Upcoming</span>
+                                                {% elif meeting.time_status == 'COMPLETED' %}
+                                                    <span class="badge bg-secondary">Completed</span>
                                                 {% else %}
-                                                    <span class="badge bg-primary">{{ meeting.get_status_display }}</span>
+                                                    <span class="badge bg-secondary">{{ meeting.get_status_display }}</span>
                                                 {% endif %}
                                             </td>
                                             <td>{{ meeting.location|default:"TBD" }}</td>

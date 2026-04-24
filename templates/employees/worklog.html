@@ -154,8 +154,35 @@
                         </div>
                     {% endif %}
                 {% else %}
-                    <div class="alert alert-warning">
-                        <i class="fas fa-exclamation-triangle"></i> Not checked in yet
+                    <!-- Check In Section -->
+                    <div class="card mb-4" id="checkin-section">
+                        <div class="card-header">
+                            <span class="badge bg-success me-2">Step 1</span>
+                            <i class="fas fa-camera"></i> Check In with Photo
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="camera-capture" id="camera-checkin">
+                                <video id="video-checkin" autoplay playsinline style="display: none; max-width: 100%; border-radius: 10px;"></video>
+                                <canvas id="canvas-checkin" style="display: none;"></canvas>
+                                <img id="photo-checkin-preview" class="img-thumbnail" style="display: none; max-width: 100%;">
+                                <div class="mt-2">
+                                    <button type="button" id="start-camera-checkin" class="btn btn-primary">
+                                        <i class="fas fa-camera"></i> Open Camera
+                                    </button>
+                                    <button type="button" id="capture-checkin" class="btn btn-danger" style="display: none;">
+                                        <i class="fas fa-camera"></i> Capture Photo
+                                    </button>
+                                    <button type="button" id="retake-checkin" class="btn btn-secondary" style="display: none;">
+                                        <i class="fas fa-redo"></i> Retake
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="hidden" name="check_in_photo" id="check-in-photo-input">
+                            <div id="checkin-error" class="text-danger small mt-2" style="display: none;">Please capture your photo first</div>
+                            <button type="button" id="checkin-btn" class="btn btn-success btn-lg mt-3" disabled>
+                                <i class="fas fa-sign-in-alt"></i> Check In
+                            </button>
+                        </div>
                     </div>
                 {% endif %}
             </div>
@@ -183,9 +210,95 @@
 <script>
 let streamCheckout = null;
 let checkoutPhotoData = null;
+let streamCheckin = null;
+let checkinPhotoData = null;
 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded');
+    
+    // Check In Camera Functions
+    const startCheckinBtn = document.getElementById('start-camera-checkin');
+    const captureCheckinBtn = document.getElementById('capture-checkin');
+    const retakeCheckinBtn = document.getElementById('retake-checkin');
+    const checkinBtn = document.getElementById('checkin-btn');
+    
+    if (startCheckinBtn) {
+        startCheckinBtn.addEventListener('click', async function() {
+            try {
+                streamCheckin = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+                document.getElementById('video-checkin').srcObject = streamCheckin;
+                document.getElementById('video-checkin').style.display = 'block';
+                document.getElementById('photo-checkin-preview').style.display = 'none';
+                startCheckinBtn.style.display = 'none';
+                captureCheckinBtn.style.display = 'inline-block';
+            } catch(err) {
+                alert('Could not access camera: ' + err.message);
+            }
+        });
+        
+        captureCheckinBtn.addEventListener('click', function() {
+            const video = document.getElementById('video-checkin');
+            const canvas = document.getElementById('canvas-checkin');
+            const preview = document.getElementById('photo-checkin-preview');
+            
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            canvas.getContext('2d').drawImage(video, 0, 0);
+            
+            checkinPhotoData = canvas.toDataURL('image/jpeg', 0.9);
+            preview.src = checkinPhotoData;
+            
+            video.style.display = 'none';
+            preview.style.display = 'block';
+            captureCheckinBtn.style.display = 'none';
+            retakeCheckinBtn.style.display = 'inline-block';
+            document.getElementById('check-in-photo-input').value = checkinPhotoData;
+            checkinBtn.disabled = false;
+            
+            if (streamCheckin) {
+                streamCheckin.getTracks().forEach(track => track.stop());
+            }
+        });
+        
+        retakeCheckinBtn.addEventListener('click', async function() {
+            preview.style.display = 'none';
+            document.getElementById('check-in-photo-input').value = '';
+            checkinPhotoData = null;
+            checkinBtn.disabled = true;
+            retakeCheckinBtn.style.display = 'none';
+            startCheckinBtn.style.display = 'inline-block';
+            
+            try {
+                streamCheckin = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+                document.getElementById('video-checkin').srcObject = streamCheckin;
+                document.getElementById('video-checkin').style.display = 'block';
+                captureCheckinBtn.style.display = 'inline-block';
+            } catch(err) {
+                alert('Could not access camera: ' + err.message);
+            }
+        });
+        
+        checkinBtn.addEventListener('click', function() {
+            if (!checkinPhotoData) {
+                document.getElementById('checkin-error').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('checkin-error').style.display = 'none';
+            const formData = new FormData();
+            formData.append('check_in_photo', dataURItoBlob(checkinPhotoData), 'checkin.jpg');
+            formData.append('csrfmiddlewaretoken', '{{ csrf_token }}');
+            
+            fetch('{% url "attendance-checkin" %}', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    window.location.reload();
+                }
+            });
+        });
+    }
     
     // Check if work form is filled
     function checkFormFilled() {

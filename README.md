@@ -2,16 +2,22 @@
 
 A professional Django-based IT Organization Management System with comprehensive features for managing organizational structure, employees, roles, departments, attendance, work logs, events, and more.
 
+
 ## Project Overview
 
+
+
 ### Architecture
+
 - **Framework**: Django 5.x (MVT Architecture)
 - **API Layer**: Django Rest Framework (DRF)
 - **Authentication**: JWT (djangorestframework-simplejwt)
 - **Database**: PostgreSQL (with SQLite fallback for development)
 - **UI**: Bootstrap 5 + Chart.js for visualizations
 
+
 ### Core Technologies
+
 - Python 3.10+
 - PostgreSQL (production) / SQLite (development)
 - Django Rest Framework
@@ -21,7 +27,9 @@ A professional Django-based IT Organization Management System with comprehensive
 
 ---
 
+
 ## Project Structure
+
 
 ```
 IT Tech Organisation Management System/
@@ -46,11 +54,15 @@ IT Tech Organisation Management System/
 └── requirements.txt
 ```
 
+
 ---
+
 
 ## Database Schema
 
+
 ### Organization Levels (6 Levels)
+
 - **Executive Leadership** (CEO, CTO, CIO, CHRO)
 - **Upper Management** (VP, Directors)
 - **Middle Management** (Managers)
@@ -58,7 +70,9 @@ IT Tech Organisation Management System/
 - **Junior Professionals** (Engineers, etc.)
 - **Support Functions** (HR, Finance, IT Support)
 
+
 ### Models
+
 
 #### 1. CustomUser
 | Field | Type | Description |

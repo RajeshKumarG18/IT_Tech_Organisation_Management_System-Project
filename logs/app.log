@@ -3340,3 +3340,986 @@ INFO 2026-04-21 14:05:50,850 basehttp "GET /media/organization_logos/Indica_Soft
 INFO 2026-04-21 14:05:50,852 basehttp "GET /media/attendance/photos/checkin.jpg HTTP/1.1" 304 0
 INFO 2026-04-22 11:21:39,249 autoreload Watching for file changes with StatReloader
 INFO 2026-04-22 14:41:24,415 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 10:44:30,422 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 10:44:36,060 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 10:44:36,182 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:44:36,494 basehttp "GET /dashboard/ HTTP/1.1" 200 57516
+INFO 2026-04-24 10:44:36,562 basehttp "GET /static/css/styles.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:44:36,634 basehttp "GET /media/organization_logos/google_A5YDqwk.png HTTP/1.1" 304 0
+INFO 2026-04-24 10:44:46,354 basehttp "GET /admin/ HTTP/1.1" 200 24926
+INFO 2026-04-24 10:44:54,007 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:44:54,063 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:44:58,108 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25236
+INFO 2026-04-24 10:44:58,156 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:45:17,399 basehttp "POST /admin/employees/organizationsettings/1/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:45:17,515 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21810
+INFO 2026-04-24 10:45:17,622 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:45:20,461 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:45:22,680 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:45:24,026 basehttp "GET /admin/ HTTP/1.1" 200 24926
+INFO 2026-04-24 10:45:27,922 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:45:28,492 basehttp "GET /media/organization_logos/Indica_Software_logo_KJN5oNq.jpeg HTTP/1.1" 200 2659
+INFO 2026-04-24 10:45:32,798 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:45:33,339 basehttp "GET /media/organization_logos/Indica_Software_logo_KJN5oNq.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:45:36,697 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:45:36,740 basehttp "GET /login/ HTTP/1.1" 200 12720
+INFO 2026-04-24 10:45:39,403 basehttp "GET /login/ HTTP/1.1" 200 12720
+INFO 2026-04-24 10:45:39,867 basehttp "GET /media/organization_logos/Indica_Software_logo_KJN5oNq.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:45:47,184 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:45:47,203 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:45:51,905 basehttp "GET /admin/ HTTP/1.1" 200 24926
+INFO 2026-04-24 10:45:55,710 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:45:55,781 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:46:04,667 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:46:04,718 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:46:32,864 basehttp "POST /admin/employees/organizationsettings/1/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:46:32,969 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21810
+INFO 2026-04-24 10:46:33,075 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:46:39,972 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 10:46:42,477 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:46:43,203 basehttp "GET /media/organization_logos/Indica_Software_logo_WQQDrvJ.jpeg HTTP/1.1" 200 2659
+INFO 2026-04-24 10:46:46,712 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:46:47,522 basehttp "GET /media/organization_logos/Indica_Software_logo_WQQDrvJ.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:46:48,443 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:46:49,045 basehttp "GET /media/organization_logos/Indica_Software_logo_WQQDrvJ.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:46:55,764 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:46:55,779 basehttp "GET /login/ HTTP/1.1" 200 12720
+INFO 2026-04-24 10:47:04,027 basehttp "POST /login/ HTTP/1.1" 200 12866
+INFO 2026-04-24 10:47:09,599 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:47:09,657 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:47:33,800 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 135
+INFO 2026-04-24 10:47:37,728 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 131
+INFO 2026-04-24 10:47:41,584 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 165
+INFO 2026-04-24 10:47:55,016 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 227
+INFO 2026-04-24 10:48:06,359 basehttp "GET /admin/ HTTP/1.1" 200 24919
+INFO 2026-04-24 10:48:12,386 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21708
+INFO 2026-04-24 10:48:12,445 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:48:15,795 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 10:48:15,848 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:48:15,863 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2026-04-24 10:48:15,865 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2026-04-24 10:48:16,245 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-04-24 10:48:16,273 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-04-24 10:48:42,099 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21708
+INFO 2026-04-24 10:50:08,977 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 10:50:09,980 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 10:52:30,324 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 10:52:39,337 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 10:52:39,494 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:52:39,573 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:52:55,505 basehttp "GET /admin/ HTTP/1.1" 200 24919
+INFO 2026-04-24 10:52:58,892 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:52:58,949 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:53:02,834 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:53:02,894 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:53:16,973 basehttp "POST /admin/employees/organizationsettings/1/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:53:17,014 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21810
+INFO 2026-04-24 10:53:17,150 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:53:20,877 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:53:21,805 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:53:24,913 basehttp "GET /admin/ HTTP/1.1" 200 24912
+INFO 2026-04-24 10:53:28,088 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 10:53:29,701 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:53:30,337 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 200 2659
+INFO 2026-04-24 10:53:31,804 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:53:32,316 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:53:35,568 basehttp "GET /admin/ HTTP/1.1" 200 24912
+INFO 2026-04-24 10:53:39,463 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:53:39,529 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:53:46,569 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:53:46,627 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:53:53,468 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 10:53:53,610 basehttp "GET /login/ HTTP/1.1" 200 12720
+INFO 2026-04-24 10:53:53,798 basehttp "GET /media/organization_logos/google_A5YDqwk.png HTTP/1.1" 304 0
+INFO 2026-04-24 10:53:53,812 basehttp "GET /static/css/styles.css HTTP/1.1" 200 21165
+INFO 2026-04-24 10:53:54,512 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 200 2659
+INFO 2026-04-24 10:53:59,454 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:53:59,490 basehttp "GET /dashboard/ HTTP/1.1" 200 57532
+INFO 2026-04-24 10:54:05,546 basehttp "GET /admin/ HTTP/1.1" 200 24912
+INFO 2026-04-24 10:54:05,635 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2026-04-24 10:54:05,635 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2026-04-24 10:54:05,635 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2026-04-24 10:54:05,647 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2026-04-24 10:54:05,660 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2026-04-24 10:54:05,672 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2026-04-24 10:54:05,942 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2026-04-24 10:54:05,970 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2026-04-24 10:54:05,970 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2026-04-24 10:54:05,972 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2026-04-24 10:54:05,975 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2026-04-24 10:54:08,484 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:54:08,595 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:54:08,611 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2026-04-24 10:54:08,612 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2026-04-24 10:54:08,616 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2026-04-24 10:54:08,629 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2026-04-24 10:54:08,631 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2026-04-24 10:54:08,639 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2026-04-24 10:54:08,664 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2026-04-24 10:54:08,665 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2026-04-24 10:54:08,680 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2026-04-24 10:54:09,104 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2026-04-24 10:54:09,131 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2026-04-24 10:54:11,675 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25252
+INFO 2026-04-24 10:54:11,745 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:54:11,795 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2026-04-24 10:54:11,801 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2026-04-24 10:54:12,124 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11973
+INFO 2026-04-24 10:54:12,125 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2026-04-24 10:54:39,021 basehttp "POST /admin/employees/organizationsettings/1/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:54:39,130 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21810
+INFO 2026-04-24 10:54:39,238 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:54:39,592 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2026-04-24 10:54:42,695 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25282
+INFO 2026-04-24 10:54:43,711 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:54:45,478 basehttp "GET /admin/ HTTP/1.1" 200 24951
+INFO 2026-04-24 10:54:49,078 basehttp "GET /dashboard/ HTTP/1.1" 200 57562
+INFO 2026-04-24 10:54:49,148 basehttp "GET /media/organization_logos/Indica_Software_logo_Wkfxx2V.jpeg HTTP/1.1" 200 2659
+INFO 2026-04-24 10:54:49,620 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:54:58,557 basehttp "GET /admin/ HTTP/1.1" 200 24951
+INFO 2026-04-24 10:55:03,649 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:55:03,702 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:55:07,726 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25282
+INFO 2026-04-24 10:55:07,793 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:55:18,070 basehttp "POST /admin/employees/organizationsettings/1/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:55:18,166 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21810
+INFO 2026-04-24 10:55:18,323 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,325 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,326 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,326 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,327 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,331 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,341 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,342 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,344 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,345 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,347 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 10:55:18,354 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,374 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,384 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,389 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,658 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:18,659 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:22,285 basehttp "GET /admin/employees/organizationsettings/1/change/ HTTP/1.1" 200 25272
+INFO 2026-04-24 10:55:24,594 basehttp "GET /admin/employees/organizationsettings/ HTTP/1.1" 200 21569
+INFO 2026-04-24 10:55:26,509 basehttp "GET /admin/ HTTP/1.1" 200 24985
+INFO 2026-04-24 10:55:30,976 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 10:55:31,045 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 200 28704
+INFO 2026-04-24 10:55:31,542 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:36,641 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:55:36,653 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 10:55:36,764 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:39,222 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 10:55:39,273 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:41,595 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 10:55:41,662 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:46,505 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 10:55:46,527 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 10:55:46,634 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:55:58,047 basehttp "GET /reports/ HTTP/1.1" 200 19152
+INFO 2026-04-24 10:55:58,099 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:13,326 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 10:56:13,386 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:19,752 basehttp "GET /profile/ HTTP/1.1" 200 16661
+INFO 2026-04-24 10:56:19,841 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:19,863 basehttp "GET /media/employee_profiles/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:24,072 basehttp "GET /employees/ HTTP/1.1" 200 15459
+INFO 2026-04-24 10:56:35,804 basehttp "GET /admin/ HTTP/1.1" 200 24985
+INFO 2026-04-24 10:56:35,864 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:35,868 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:35,874 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:35,876 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:35,877 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:35,878 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:36,208 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-24 10:56:44,895 basehttp "GET /worklog/ HTTP/1.1" 200 26410
+INFO 2026-04-24 10:56:44,930 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:57:03,290 basehttp "GET /worklog/ HTTP/1.1" 200 26410
+INFO 2026-04-24 10:57:03,340 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 10:57:03,708 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:01:34,437 basehttp "GET /worklog/ HTTP/1.1" 200 32428
+INFO 2026-04-24 11:01:34,529 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:01:35,549 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:01:55,029 basehttp "POST /attendance/checkin/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:01:55,063 basehttp "GET /worklog/ HTTP/1.1" 200 32236
+INFO 2026-04-24 11:01:55,158 basehttp "GET /worklog/ HTTP/1.1" 200 32236
+INFO 2026-04-24 11:01:55,251 basehttp "GET /media/attendance/photos/checkin_RXUktNe.jpg HTTP/1.1" 200 36085
+INFO 2026-04-24 11:03:25,285 basehttp "POST /worklog/create/ HTTP/1.1" 200 32528
+INFO 2026-04-24 11:03:25,474 basehttp "POST /attendance/checkout/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:03:25,495 basehttp "GET /worklog/ HTTP/1.1" 200 31338
+INFO 2026-04-24 11:03:31,193 basehttp "GET /worklog/ HTTP/1.1" 200 31338
+INFO 2026-04-24 11:03:31,284 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:03:31,297 basehttp "GET /media/attendance/photos/checkin_RXUktNe.jpg HTTP/1.1" 304 0
+INFO 2026-04-24 11:03:31,914 basehttp "GET /media/attendance/photos/checkout.jpg HTTP/1.1" 200 36003
+INFO 2026-04-24 11:03:31,974 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:03:47,172 basehttp "GET /reports/ HTTP/1.1" 200 19577
+INFO 2026-04-24 11:04:06,102 basehttp "GET /admin/ HTTP/1.1" 200 25266
+INFO 2026-04-24 11:04:06,146 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,150 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,153 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,156 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,164 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,164 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,501 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,519 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,519 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,520 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:06,521 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,622 basehttp "GET /admin/employees/notification/ HTTP/1.1" 200 21825
+INFO 2026-04-24 11:04:11,688 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,697 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:04:11,699 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,706 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,707 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,709 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,714 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,720 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,720 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:11,721 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:12,046 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:12,083 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:23,679 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21390
+INFO 2026-04-24 11:04:23,732 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:04:31,589 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 200 28708
+INFO 2026-04-24 11:04:31,636 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:31,651 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:04:31,659 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:31,660 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2026-04-24 11:04:31,660 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2026-04-24 11:04:31,971 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:31,975 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:31,984 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:04:32,054 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2026-04-24 11:04:32,058 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2026-04-24 11:06:14,492 basehttp "POST /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:06:14,572 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21889
+INFO 2026-04-24 11:06:14,714 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:14,724 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:14,726 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:14,727 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:14,727 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:14,737 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:06:15,298 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:15,322 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:19,745 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 200 28708
+INFO 2026-04-24 11:06:21,481 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:06:23,352 basehttp "GET /admin/employees/notification/ HTTP/1.1" 200 21825
+INFO 2026-04-24 11:06:25,040 basehttp "GET /admin/ HTTP/1.1" 200 24986
+INFO 2026-04-24 11:06:31,842 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:06:31,898 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:32,248 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:34,719 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:06:52,376 basehttp "GET /admin/ HTTP/1.1" 200 24986
+INFO 2026-04-24 11:06:52,438 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,596 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:06:56,645 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,660 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:06:56,662 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,665 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,666 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,666 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,678 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,682 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,685 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,687 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:56,995 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,396 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:06:59,459 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,462 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,464 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,465 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,468 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:06:59,834 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,838 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,859 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,861 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,874 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,879 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,929 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:06:59,933 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:07:03,857 basehttp "GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+INFO 2026-04-24 11:07:41,978 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:07:42,073 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 11:07:42,183 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:07:45,371 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:07:47,234 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:07:48,784 basehttp "GET /admin/ HTTP/1.1" 200 24981
+INFO 2026-04-24 11:07:53,069 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:07:53,110 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:07:53,481 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:07:56,256 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:07:57,652 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:08:05,558 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:08:10,419 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:08:16,296 basehttp "GET /admin/ HTTP/1.1" 200 24981
+INFO 2026-04-24 11:08:20,161 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:08:20,224 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:08:23,681 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:08:23,746 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:09:57,404 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:09:58,156 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:12:13,775 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:12:21,972 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 11:12:45,057 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:12:50,776 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 11:12:50,878 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:12:51,029 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:12:51,119 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 200 28704
+INFO 2026-04-24 11:13:03,207 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:13:05,922 basehttp "GET /reports/ HTTP/1.1" 200 20150
+INFO 2026-04-24 11:13:11,142 basehttp "GET /admin/ HTTP/1.1" 200 24981
+INFO 2026-04-24 11:13:16,559 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:13:16,707 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:13:20,151 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:13:20,209 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:13:20,244 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:13:20,249 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:13:20,626 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:13:20,631 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:14:03,319 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:14:03,344 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 11:14:03,429 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:14:08,694 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 11:14:10,756 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:14:13,380 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:14:19,447 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:14:19,858 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:14:22,457 basehttp "GET /worklog/ HTTP/1.1" 200 31338
+INFO 2026-04-24 11:14:22,559 basehttp "GET /media/attendance/photos/checkin_RXUktNe.jpg HTTP/1.1" 200 36085
+INFO 2026-04-24 11:14:22,565 basehttp "GET /media/attendance/photos/checkout.jpg HTTP/1.1" 200 36003
+INFO 2026-04-24 11:14:30,640 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:14:37,028 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:14:37,067 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:14:38,947 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:15:58,008 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 11:15:58,793 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:16:44,990 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:16:45,081 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:16:45,860 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:16:51,716 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:16:55,576 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:16:59,774 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:17:02,965 basehttp "GET /admin/ HTTP/1.1" 200 24996
+INFO 2026-04-24 11:17:06,021 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:17:06,070 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:17:10,199 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:17:10,253 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:17:10,257 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:17:10,260 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:17:10,757 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:17:10,762 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:17:25,454 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:17:37,617 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:17:37,771 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 11:17:37,885 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:17:41,981 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 11:17:43,982 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:17:46,817 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:17:49,473 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:17:54,209 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:17:56,359 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:17:57,727 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:17:58,822 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:18:04,381 basehttp "GET /admin/ HTTP/1.1" 200 25011
+INFO 2026-04-24 11:18:08,297 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:18:08,345 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:18:10,874 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:18:10,934 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:19:02,124 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:19:02,945 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:19:22,328 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 11:19:23,028 autoreload Watching for file changes with StatReloader
+ERROR 2026-04-24 11:19:44,715 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 394, in save
+    raise ValueError("End datetime must be after start datetime")
+ValueError: End datetime must be after start datetime
+ERROR 2026-04-24 11:19:44,717 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 136616
+INFO 2026-04-24 11:19:49,398 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+ERROR 2026-04-24 11:19:55,538 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 394, in save
+    raise ValueError("End datetime must be after start datetime")
+ValueError: End datetime must be after start datetime
+ERROR 2026-04-24 11:19:55,539 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 136616
+INFO 2026-04-24 11:20:19,547 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:20:51,148 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:20:52,107 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:20:52,843 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:21:24,404 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:21:24,491 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 11:21:24,572 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:21:28,605 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 11:21:30,486 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:21:30,538 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:21:34,312 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:21:36,277 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:21:36,772 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:21:41,535 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:22:16,614 basehttp "GET /admin/ HTTP/1.1" 200 24983
+INFO 2026-04-24 11:22:20,580 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:22:20,654 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:22:24,471 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:22:24,526 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:22:24,528 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 11:22:24,533 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:22:24,934 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:22:24,936 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 11:22:32,632 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 11:22:32,737 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 11:22:32,858 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:22:36,693 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 11:22:38,658 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:22:41,276 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:22:43,148 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:22:47,505 basehttp "GET /admin/ HTTP/1.1" 200 24955
+INFO 2026-04-24 11:22:51,128 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 11:22:51,254 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:22:54,295 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 11:22:54,365 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 11:24:02,654 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 11:24:05,056 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 11:24:07,525 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 11:24:07,584 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:25:34,320 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 11:25:35,153 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:25:56,512 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:25:57,254 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:28:16,214 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:28:25,398 basehttp "GET /schedule/ HTTP/1.1" 200 7945
+INFO 2026-04-24 11:57:50,954 basehttp "GET /schedule/ HTTP/1.1" 200 15213
+INFO 2026-04-24 11:57:51,012 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:57:51,787 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 11:58:14,372 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:58:17,931 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:58:22,250 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 11:59:31,709 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 11:59:32,577 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:59:42,652 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:59:43,412 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 11:59:55,580 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 11:59:56,411 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:02:27,383 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:02:35,800 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:02:46,659 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:02:50,600 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:02:54,867 basehttp "GET /schedule/ HTTP/1.1" 200 15213
+INFO 2026-04-24 12:02:57,372 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:04:00,524 basehttp "GET /admin/ HTTP/1.1" 200 24955
+INFO 2026-04-24 12:04:05,885 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 12:04:05,945 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:04:08,922 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:04:09,078 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:04:09,087 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:04:09,089 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:04:09,670 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 12:04:09,672 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 12:06:48,299 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 12:06:49,068 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:09:13,134 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:09:21,845 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:09:23,939 basehttp "GET /admin/ HTTP/1.1" 200 24955
+INFO 2026-04-24 12:09:34,769 basehttp "GET /admin/ HTTP/1.1" 200 24955
+INFO 2026-04-24 12:09:42,211 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:09:42,266 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:09:43,723 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:09:44,249 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:09:46,465 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:09:50,301 basehttp "GET /schedule/ HTTP/1.1" 200 15213
+INFO 2026-04-24 12:10:15,137 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:10:17,016 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:11:06,618 basehttp "GET /schedule/ HTTP/1.1" 200 15213
+INFO 2026-04-24 12:11:15,324 basehttp "GET /admin/ HTTP/1.1" 200 24955
+INFO 2026-04-24 12:11:20,563 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 12:11:20,613 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:11:23,232 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:11:23,311 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:11:54,085 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:11:54,152 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 12:11:54,304 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:11:58,042 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 12:11:59,813 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 12:12:04,159 basehttp "GET /org-chart/ HTTP/1.1" 200 19852
+INFO 2026-04-24 12:12:04,563 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19858
+INFO 2026-04-24 12:12:08,021 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:12:11,238 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:12:23,853 basehttp "GET /admin/ HTTP/1.1" 200 24927
+INFO 2026-04-24 12:12:27,032 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 12:12:27,117 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:12:30,444 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:12:30,506 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:12:30,513 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:12:30,529 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:12:30,892 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 12:12:30,895 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 12:13:53,202 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:13:54,082 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:16:22,525 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:16:23,421 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:16:26,904 basehttp "GET /schedule/ HTTP/1.1" 200 7945
+ERROR 2026-04-24 12:16:33,793 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 393, in save
+    self.status = self.time_status
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 401, in time_status
+    import pytz
+ModuleNotFoundError: No module named 'pytz'
+ERROR 2026-04-24 12:16:33,795 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 142444
+INFO 2026-04-24 12:17:05,424 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:17:06,005 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:17:17,730 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:17:18,392 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:17:51,609 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:17:55,287 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:18:00,268 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:18:05,543 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:18:11,082 basehttp "GET /reports/ HTTP/1.1" 200 7944
+INFO 2026-04-24 12:19:48,636 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:19:49,365 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:19:52,872 basehttp "GET /admin/employees/event/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:19:58,825 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:20:22,297 basehttp "GET / HTTP/1.1" 302 0
+INFO 2026-04-24 12:20:22,335 basehttp "GET /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:20:22,411 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 12:20:22,491 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:20:27,618 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:20:30,995 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:20:31,414 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:20:33,034 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 12:20:41,717 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 12:20:49,119 basehttp "GET /admin/ HTTP/1.1" 200 24927
+INFO 2026-04-24 12:20:53,750 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21678
+INFO 2026-04-24 12:20:53,801 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:20:57,895 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:20:57,952 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2026-04-24 12:21:23,195 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 394, in save
+    import pytz
+ModuleNotFoundError: No module named 'pytz'
+ERROR 2026-04-24 12:21:23,197 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 138243
+INFO 2026-04-24 12:21:51,683 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:22:07,175 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:22:07,934 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:22:12,514 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:22:13,265 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:22:31,161 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:22:48,372 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:22:56,099 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:26:13,890 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 12:26:16,430 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 12:27:52,482 basehttp "GET /org-chart/ HTTP/1.1" 200 19852
+INFO 2026-04-24 12:27:53,271 basehttp "GET /api/dashboard/org-chart/ HTTP/1.1" 200 19858
+INFO 2026-04-24 12:27:56,721 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 12:28:11,799 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/admin.py changed, reloading.
+INFO 2026-04-24 12:28:12,687 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:28:29,028 autoreload /home/dell/Documents/IT Tech Organisation Management System/core/settings.py changed, reloading.
+INFO 2026-04-24 17:58:29,771 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 18:00:12,825 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 18:00:31,082 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 126
+INFO 2026-04-24 18:00:33,855 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 126
+INFO 2026-04-24 18:00:36,475 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:00:43,617 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:00:47,318 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 227
+INFO 2026-04-24 18:00:50,050 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:00:56,515 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:00:58,674 basehttp "POST /api/dashboard/chatbot/ HTTP/1.1" 200 211
+INFO 2026-04-24 18:01:16,576 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 18:01:16,744 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 18:01:17,681 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 18:01:24,490 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:01:30,097 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:01:30,119 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 18:01:51,060 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:02:05,871 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/admin.py changed, reloading.
+INFO 2026-04-24 18:02:06,584 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 18:02:09,091 basehttp "GET /admin/employees/event/add/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:02:23,483 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 18:02:23,540 basehttp "GET /dashboard/ HTTP/1.1" 200 57552
+INFO 2026-04-24 18:02:29,342 basehttp "GET /schedule/ HTTP/1.1" 200 15072
+INFO 2026-04-24 18:02:32,953 basehttp "GET /reports/ HTTP/1.1" 200 20155
+INFO 2026-04-24 18:02:45,479 basehttp "GET /admin/ HTTP/1.1" 200 24931
+INFO 2026-04-24 18:02:54,833 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21682
+INFO 2026-04-24 18:02:54,898 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 18:02:57,698 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29424
+INFO 2026-04-24 18:02:57,791 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 18:02:57,794 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 18:02:57,796 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 18:02:58,373 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 18:02:58,373 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+ERROR 2026-04-24 18:03:27,344 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 394, in save
+    self.status = self.time_status
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 400, in time_status
+    import pytz
+ModuleNotFoundError: No module named 'pytz'
+ERROR 2026-04-24 18:03:27,346 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 141873
+INFO 2026-04-24 18:03:30,756 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29424
+INFO 2026-04-24 18:03:54,544 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 200 29767
+INFO 2026-04-24 18:03:54,600 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2026-04-24 18:05:37,968 log Internal Server Error: /admin/employees/event/2/change/
+Traceback (most recent call last):
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 720, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1988, in change_view
+    return self.changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1844, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1895, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/dell/Documents/IT Tech Organisation Management System/venv/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1315, in save_model
+    obj.save()
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 394, in save
+    self.status = self.time_status
+  File "/home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py", line 400, in time_status
+    import pytz
+ModuleNotFoundError: No module named 'pytz'
+ERROR 2026-04-24 18:05:37,969 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 500 141877
+INFO 2026-04-24 18:06:55,833 autoreload /home/dell/Documents/IT Tech Organisation Management System/core/settings.py changed, reloading.
+INFO 2026-04-24 12:36:56,485 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:37:21,467 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:37:22,063 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:37:29,621 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:37:30,246 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:37:41,948 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:37:42,455 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:37:46,970 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:37:47,499 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:37:57,138 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 12:37:57,671 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:40:19,798 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 12:40:21,914 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:40:34,593 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:41:25,894 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:41:26,040 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 12:41:26,234 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:41:29,427 basehttp "GET /admin/employees/event/2/change/ HTTP/1.1" 200 29420
+INFO 2026-04-24 12:41:29,527 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:41:44,500 basehttp "POST /admin/employees/event/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:41:44,580 basehttp "GET /admin/employees/event/ HTTP/1.1" 200 21891
+INFO 2026-04-24 12:41:44,710 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:41:48,561 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 12:41:50,541 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 12:41:50,591 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:41:53,770 basehttp "GET /reports/ HTTP/1.1" 200 21376
+INFO 2026-04-24 12:41:56,339 basehttp "GET /reports/ HTTP/1.1" 200 21376
+INFO 2026-04-24 12:41:56,792 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:42:05,081 basehttp "GET /schedule/ HTTP/1.1" 200 15207
+INFO 2026-04-24 12:42:07,766 basehttp "GET /schedule/ HTTP/1.1" 200 15207
+INFO 2026-04-24 12:42:10,807 basehttp "GET /schedule/ HTTP/1.1" 200 15207
+INFO 2026-04-24 12:42:13,980 basehttp "GET /reports/ HTTP/1.1" 200 21376
+INFO 2026-04-24 12:42:18,736 basehttp "GET /reports/ HTTP/1.1" 200 21376
+INFO 2026-04-24 12:42:33,384 basehttp "GET /schedule/ HTTP/1.1" 200 15207
+INFO 2026-04-24 12:42:35,874 basehttp "GET /admin/ HTTP/1.1" 200 24871
+INFO 2026-04-24 12:42:40,383 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 12:42:58,926 basehttp "GET /reports/ HTTP/1.1" 200 21376
+WARNING 2026-04-24 12:43:18,060 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-24 12:43:18,061 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+INFO 2026-04-24 12:43:33,988 basehttp "GET /admin/ HTTP/1.1" 200 24871
+INFO 2026-04-24 12:43:40,548 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21708
+INFO 2026-04-24 12:43:40,620 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:43:43,780 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 12:43:43,824 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:44:55,588 basehttp "POST /admin/accounts/customuser/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:44:55,677 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21921
+INFO 2026-04-24 12:44:55,805 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:45:04,401 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 12:45:06,389 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 12:45:08,846 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:45:08,855 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 12:45:35,517 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 12:46:06,646 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 12:46:10,772 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:46:10,822 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 12:46:17,615 basehttp "GET /profile/ HTTP/1.1" 200 16661
+INFO 2026-04-24 12:46:17,683 basehttp "GET /media/employee_profiles/Indica_Software_logo.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 12:46:38,016 basehttp "GET /admin/ HTTP/1.1" 200 24843
+INFO 2026-04-24 12:46:44,016 basehttp "GET /admin/employees/worklog/ HTTP/1.1" 200 21869
+INFO 2026-04-24 12:46:44,067 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:46:48,961 basehttp "GET /admin/roles/role/ HTTP/1.1" 200 22298
+INFO 2026-04-24 12:46:49,013 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:47:29,691 basehttp "POST /admin/roles/role/ HTTP/1.1" 200 19693
+INFO 2026-04-24 12:47:29,760 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:47:36,674 basehttp "GET /admin/employees/employee/2/change/ HTTP/1.1" 200 36532
+INFO 2026-04-24 12:47:36,726 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:47:36,732 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 12:47:36,735 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:47:37,113 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 12:48:18,082 basehttp "POST /admin/employees/employee/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 12:48:18,206 basehttp "GET /admin/employees/employee/ HTTP/1.1" 200 22008
+INFO 2026-04-24 12:48:18,323 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:48:29,272 basehttp "GET /admin/departments/department/ HTTP/1.1" 200 23207
+INFO 2026-04-24 12:48:29,313 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:48:37,727 basehttp "GET /admin/auth/group/ HTTP/1.1" 200 21397
+INFO 2026-04-24 12:48:37,783 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:48:41,226 basehttp "GET /admin/auth/group/1/change/ HTTP/1.1" 200 30818
+INFO 2026-04-24 12:48:41,281 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:48:51,152 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 12:48:53,508 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 12:49:13,106 basehttp "GET /admin/ HTTP/1.1" 200 24862
+INFO 2026-04-24 12:49:46,479 basehttp "GET /admin/ HTTP/1.1" 200 24862
+WARNING 2026-04-24 12:55:39,317 log Forbidden (CSRF cookie not set.): /login/
+WARNING 2026-04-24 12:55:39,318 basehttp "POST /login/ HTTP/1.1" 403 2855
+WARNING 2026-04-24 12:57:58,798 log Forbidden (CSRF cookie not set.): /login/
+WARNING 2026-04-24 12:57:58,800 basehttp "POST /login/ HTTP/1.1" 403 2855
+INFO 2026-04-24 12:59:09,343 basehttp "GET /admin/ HTTP/1.1" 200 24862
+INFO 2026-04-24 12:59:27,938 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21708
+INFO 2026-04-24 12:59:28,002 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:59:31,165 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 12:59:31,298 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 12:59:31,874 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2026-04-24 13:00:02,384 basehttp "POST /admin/accounts/customuser/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:00:02,474 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21921
+INFO 2026-04-24 13:00:02,587 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:00:09,818 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 13:00:12,129 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 13:00:12,183 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:00:14,794 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:00:14,804 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:00:40,378 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 13:01:41,056 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 13:01:41,831 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:02:22,602 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 13:02:23,293 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:02:41,166 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 13:02:41,619 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:03:10,521 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:03:10,571 basehttp "GET /dashboard/ HTTP/1.1" 200 57852
+INFO 2026-04-24 13:03:39,035 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:03:39,044 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:03:53,229 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:03:53,260 basehttp "GET /dashboard/ HTTP/1.1" 200 58055
+INFO 2026-04-24 13:03:58,066 basehttp "GET /admin/ HTTP/1.1" 200 24862
+INFO 2026-04-24 13:04:02,655 basehttp "GET /admin/employees/employee/ HTTP/1.1" 200 21781
+INFO 2026-04-24 13:04:02,714 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:04:06,581 basehttp "GET /admin/employees/employee/2/change/ HTTP/1.1" 200 36532
+INFO 2026-04-24 13:04:06,681 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:04:06,683 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2026-04-24 13:04:06,700 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2026-04-24 13:04:07,066 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2026-04-24 13:04:14,960 basehttp "GET /admin/roles/role/ HTTP/1.1" 200 22298
+INFO 2026-04-24 13:04:15,008 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:04:29,458 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21708
+INFO 2026-04-24 13:04:29,516 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:04:32,652 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 13:04:32,714 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:10:29,431 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 13:10:29,494 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:10:57,846 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/urls.py changed, reloading.
+INFO 2026-04-24 13:10:58,515 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:11:09,451 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/dashboard/web_views.py changed, reloading.
+INFO 2026-04-24 13:11:10,124 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:12:05,768 basehttp "GET /password-change/ HTTP/1.1" 302 0
+WARNING 2026-04-24 13:12:11,671 log Forbidden (CSRF cookie not set.): /login/
+WARNING 2026-04-24 13:12:11,672 basehttp "POST /login/ HTTP/1.1" 403 2855
+INFO 2026-04-24 13:12:28,864 basehttp "GET /admin/accounts/customuser/2/change/ HTTP/1.1" 200 43769
+INFO 2026-04-24 13:12:28,911 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:12:57,520 basehttp "POST /admin/accounts/customuser/2/change/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:12:57,624 basehttp "GET /admin/accounts/customuser/ HTTP/1.1" 200 21921
+INFO 2026-04-24 13:12:57,750 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2026-04-24 13:13:03,591 basehttp "GET /admin/chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 13:13:05,908 basehttp "GET /dashboard/ HTTP/1.1" 200 58215
+INFO 2026-04-24 13:13:05,970 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:13:08,609 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:13:08,620 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:13:16,552 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 13:13:35,751 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 13:13:58,601 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:13:58,632 basehttp "GET /dashboard/ HTTP/1.1" 200 58215
+INFO 2026-04-24 13:14:03,492 basehttp "GET /password-change/ HTTP/1.1" 200 12564
+INFO 2026-04-24 13:14:08,706 basehttp "GET /password-change/ HTTP/1.1" 200 12564
+INFO 2026-04-24 13:14:12,165 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:14:12,186 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:14:26,099 basehttp "POST /login/ HTTP/1.1" 200 12876
+INFO 2026-04-24 13:14:34,128 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:14:34,149 basehttp "GET /dashboard/ HTTP/1.1" 200 58215
+INFO 2026-04-24 13:14:40,157 basehttp "GET /chatbot/ HTTP/1.1" 200 10531
+INFO 2026-04-24 13:14:42,399 basehttp "GET /dashboard/ HTTP/1.1" 200 58215
+INFO 2026-04-24 13:14:44,971 basehttp "GET /password-change/ HTTP/1.1" 200 12564
+INFO 2026-04-24 13:15:34,908 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:15:54,723 basehttp "GET /password-change/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:15:58,306 basehttp "GET /password-change/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:16:04,595 basehttp "GET /login/ HTTP/1.1" 200 12730
+WARNING 2026-04-24 13:16:04,614 log Forbidden (CSRF token missing.): /login/
+WARNING 2026-04-24 13:16:04,616 basehttp "POST /login/ HTTP/1.1" 403 2491
+INFO 2026-04-24 13:18:10,587 basehttp "GET /password-change/ HTTP/1.1" 200 12564
+INFO 2026-04-24 13:18:11,299 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:18:14,833 basehttp "POST /logout/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:18:14,843 basehttp "GET /login/ HTTP/1.1" 200 12730
+INFO 2026-04-24 13:18:37,254 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:18:37,314 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:18:42,551 basehttp "GET /password-change/ HTTP/1.1" 200 12381
+INFO 2026-04-24 13:18:49,825 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:21:04,127 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:21:07,064 basehttp "GET /password-change/ HTTP/1.1" 200 5413
+INFO 2026-04-24 13:21:14,918 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:21:17,426 basehttp "GET /password-change/ HTTP/1.1" 200 5413
+INFO 2026-04-24 13:21:52,948 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:28:58,507 basehttp "GET /password-change/ HTTP/1.1" 200 5413
+INFO 2026-04-24 13:29:02,821 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+INFO 2026-04-24 13:29:02,869 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:29:05,025 basehttp "GET /password-change/ HTTP/1.1" 200 5413
+INFO 2026-04-24 13:29:52,602 basehttp "POST /password-change/ HTTP/1.1" 200 5618
+INFO 2026-04-24 13:30:51,005 basehttp "POST /password-change/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:30:51,030 basehttp "GET /login/ HTTP/1.1" 200 12905
+INFO 2026-04-24 13:31:03,016 basehttp "POST /login/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:31:03,059 basehttp "GET /dashboard/ HTTP/1.1" 200 58012

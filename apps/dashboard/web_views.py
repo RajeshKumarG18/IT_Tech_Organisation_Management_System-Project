@@ -32,7 +32,22 @@ def schedule_view(request):
     from datetime import datetime
     
     today = timezone.now().date()
-    events = Event.objects.filter(start_datetime__date__gte=today).order_by('start_datetime')[:10]
+    now = timezone.now()
+    
+    # Get all events - filter out invalid ones (end <= start) for display
+    all_events = Event.objects.filter(start_datetime__date__gte=today).order_by('start_datetime')
+    
+    # Filter events: either upcoming (start > now) or live (now between start and end)
+    events = []
+    for event in all_events:
+        # Include if: upcoming OR live OR has meeting link
+        if event.start_datetime > now:
+            events.append(event)  # Upcoming
+        elif event.end_datetime > now and event.end_datetime > event.start_datetime:
+            events.append(event)  # Live but has valid duration
+        elif event.meeting_link:
+            events.append(event)  # Has meeting link, show it
+    
     pending_leaves = LeaveRequest.objects.filter(status='PENDING').order_by('start_date')[:10]
     
     context = {
@@ -59,10 +74,39 @@ def reports_view(request):
     
     # Get upcoming and past meetings
     now = timezone.now()
-    upcoming_meetings = Event.objects.filter(start_datetime__gte=now).order_by('start_datetime')[:10]
-    past_meetings = Event.objects.filter(end_datetime__lt=now).order_by('-start_datetime')[:10]
-    live_meetings = Event.objects.filter(start_datetime__lte=now, end_datetime__gte=now).count()
+    
+    # Separate events by time validity
+    valid_events = Event.objects.filter(end_datetime__gt=models.F('start_datetime'))
+    invalid_time_events = Event.objects.filter(end_datetime__lte=models.F('start_datetime'))
+    
+    # Live meetings (currently happening) - only valid events
+    live_meetings = valid_events.filter(
+        start_datetime__lte=now, 
+        end_datetime__gte=now
+    )
+    
+    # Upcoming meetings (not started yet) - valid events only
+    upcoming_valid = valid_events.filter(start_datetime__gt=now)
+    
+    # Invalid time events - if start is in future, show as upcoming
+    invalid_upcoming = invalid_time_events.filter(start_datetime__gt=now)
+    
+    # Past meetings - valid events that ended
+    past_valid = valid_events.filter(end_datetime__lt=now)
+    
+    # Invalid time events - if start is in past, show in past
+    invalid_past = invalid_time_events.filter(start_datetime__lte=now)
+    
+    # Combine upcoming: live + valid upcoming + invalid upcoming
+    all_upcoming = list(live_meetings) + list(upcoming_valid) + list(invalid_upcoming)
+    
+    # Combine past: valid past + invalid past
+    all_past = list(past_valid) + list(invalid_past)
+    
     total_meetings = Event.objects.count()
+    live_count = live_meetings.count()
+    upcoming_count = len(all_upcoming)
+    past_count = len(all_past)
     
     context = {
         'title': 'Reports',
@@ -71,9 +115,9 @@ def reports_view(request):
         'total_departments': total_departments,
         'total_roles': total_roles,
         'recent_worklogs': recent_worklogs,
-        'upcoming_meetings': upcoming_meetings,
-        'past_meetings': past_meetings,
-        'live_meetings': live_meetings,
+        'upcoming_meetings': all_upcoming,
+        'past_meetings': all_past,
+        'live_meetings': live_count,
         'total_meetings': total_meetings,
     }
     return render(request, 'dashboard/reports.html', context)
@@ -230,6 +274,34 @@ def custom_login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('login')
+
+
+def password_change_view(request):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    if request.method == 'POST':
+        current_password = request.POST.get('current_password', '')
+        new_password = request.POST.get('new_password', '')
+        confirm_password = request.POST.get('confirm_password', '')
+        
+        user = request.user
+        
+        # Verify current password
+        if not user.check_password(current_password):
+            messages.error(request, 'Current password is incorrect')
+        elif len(new_password) < 8:
+            messages.error(request, 'New password must be at least 8 characters')
+        elif new_password != confirm_password:
+            messages.error(request, 'New password and confirm password do not match')
+        else:
+            user.set_password(new_password)
+            user.save()
+            messages.success(request, 'Password changed successfully! Please login with your new password.')
+            logout(request)
+            return redirect('login')
+    
+    return render(request, 'registration/password_change.html')
 
 
 def org_chart_view(request):

@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
@@ -389,17 +390,29 @@ class Event(models.Model):
     def __str__(self):
         return self.title
     
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+    
     @property
     def time_status(self):
         """Auto-determine status based on current time"""
-        from django.utils import timezone
-        now = timezone.now()
-        if now < self.start_datetime:
-            return 'SCHEDULED'
-        elif now >= self.start_datetime and now <= self.end_datetime:
-            return 'IN_PROGRESS'
-        else:
-            return 'COMPLETED'
+        try:
+            from django.utils import timezone
+            now = timezone.now()
+            
+            if self.start_datetime and self.end_datetime:
+                if self.end_datetime <= self.start_datetime:
+                    return self.status if self.status else 'SCHEDULED'
+                
+                if now < self.start_datetime:
+                    return 'SCHEDULED'
+                elif now >= self.start_datetime and now <= self.end_datetime:
+                    return 'IN_PROGRESS'
+                else:
+                    return 'COMPLETED'
+            return self.status if self.status else 'SCHEDULED'
+        except Exception:
+            return self.status if self.status else 'SCHEDULED'
     
     @property
     def is_upcoming(self):
@@ -472,7 +485,6 @@ class OrganizationSettings(models.Model):
         if self.pk is None and OrganizationSettings.objects.exists():
             org = OrganizationSettings.objects.first()
             self.pk = org.pk
-            return
         super().save(*args, **kwargs)
 
     @classmethod

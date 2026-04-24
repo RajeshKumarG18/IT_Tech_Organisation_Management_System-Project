@@ -64,6 +64,9 @@
                 <a href="{% url 'chatbot-page' %}" class="nav-item {% if 'chatbot' in request.path %}active{% endif %}">
                     <i class="fas fa-robot"></i> <span>ChatBot</span>
                 </a>
+                <a href="{% url 'password-change' %}" class="nav-item {% if 'password-change' in request.path %}active{% endif %}">
+                    <i class="fas fa-key"></i> <span>Change Password</span>
+                </a>
                 <a href="#" class="nav-item" onclick="document.getElementById('logout-form').submit()">
                     <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
                 </a>
