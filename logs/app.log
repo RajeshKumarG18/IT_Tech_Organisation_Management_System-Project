@@ -4323,3 +4323,44 @@ INFO 2026-04-24 13:30:51,005 basehttp "POST /password-change/ HTTP/1.1" 302 0
 INFO 2026-04-24 13:30:51,030 basehttp "GET /login/ HTTP/1.1" 200 12905
 INFO 2026-04-24 13:31:03,016 basehttp "POST /login/ HTTP/1.1" 302 0
 INFO 2026-04-24 13:31:03,059 basehttp "GET /dashboard/ HTTP/1.1" 200 58012
+WARNING 2026-04-24 13:45:25,543 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-24 13:45:25,544 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+WARNING 2026-04-24 13:45:27,752 log Unauthorized: /api/employees/notifications/mark_all_read/
+WARNING 2026-04-24 13:45:27,753 basehttp "POST /api/employees/notifications/mark_all_read/ HTTP/1.1" 401 183
+WARNING 2026-04-24 13:45:27,768 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-24 13:45:27,769 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+WARNING 2026-04-24 13:45:29,597 log Unauthorized: /api/employees/notifications/mark_all_read/
+WARNING 2026-04-24 13:45:29,598 basehttp "POST /api/employees/notifications/mark_all_read/ HTTP/1.1" 401 183
+WARNING 2026-04-24 13:45:29,604 log Unauthorized: /api/employees/notifications/
+WARNING 2026-04-24 13:45:29,604 basehttp "GET /api/employees/notifications/ HTTP/1.1" 401 183
+INFO 2026-04-24 13:46:51,678 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/models.py changed, reloading.
+INFO 2026-04-24 13:46:52,548 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:47:01,760 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/admin.py changed, reloading.
+INFO 2026-04-24 13:47:02,531 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:47:14,771 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/admin.py changed, reloading.
+INFO 2026-04-24 13:47:15,572 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:48:18,443 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/views.py changed, reloading.
+INFO 2026-04-24 13:48:19,260 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:48:40,777 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/serializers.py changed, reloading.
+INFO 2026-04-24 13:48:41,573 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:48:45,554 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/serializers.py changed, reloading.
+INFO 2026-04-24 13:48:46,366 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:48:59,575 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/views.py changed, reloading.
+INFO 2026-04-24 13:49:00,381 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:49:16,663 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/views.py changed, reloading.
+INFO 2026-04-24 13:49:17,464 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:49:26,624 autoreload /home/dell/Documents/IT Tech Organisation Management System/apps/employees/urls.py changed, reloading.
+INFO 2026-04-24 13:49:27,401 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:50:41,782 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:53:12,843 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:53:53,428 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:56:31,355 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:56:45,474 autoreload Watching for file changes with StatReloader
+INFO 2026-04-24 13:56:47,339 basehttp "GET /dashboard/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:56:57,246 basehttp "GET /payroll/ HTTP/1.1" 302 0
+INFO 2026-04-24 13:57:21,436 basehttp "GET /dashboard/ HTTP/1.1" 200 58168
+INFO 2026-04-24 13:57:21,490 basehttp "GET /media/organization_logos/Indica_Software_50QKN5u.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:57:22,249 basehttp "GET /media/organization_logos/Indica_Software_logo_GPcXY4e.jpeg HTTP/1.1" 304 0
+INFO 2026-04-24 13:57:27,535 basehttp "GET /payroll/ HTTP/1.1" 200 21402
+INFO 2026-04-24 13:57:36,088 basehttp "GET /dashboard/ HTTP/1.1" 200 58168
+INFO 2026-04-24 13:59:37,433 basehttp "GET /dashboard/ HTTP/1.1" 302 0

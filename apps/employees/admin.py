@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Employee, WorkLog, Attendance, Notification, LeaveRequest, Announcement, Event, Project, ChatBotConversation, OrganizationSettings
+from .models import Employee, WorkLog, Attendance, Notification, LeaveRequest, Announcement, Event, Project, ChatBotConversation, OrganizationSettings, Payroll
 
 
 @admin.register(Employee)
@@ -125,3 +125,33 @@ class OrganizationSettingsAdmin(admin.ModelAdmin):
             'fields': ('primary_color', 'secondary_color')
         }),
     )
+
+
+@admin.register(Payroll)
+class PayrollAdmin(admin.ModelAdmin):
+    list_display = ['employee', 'month', 'year', 'gross_salary', 'total_deductions', 'net_salary', 'status']
+    list_filter = ['status', 'year', 'month']
+    search_fields = ['employee__first_name', 'employee__last_name', 'employee__employee_id']
+    ordering = ['-year', '-month']
+    raw_id_fields = ['employee', 'created_by']
+    date_hierarchy = 'created_at'
+    
+    fieldsets = (
+        ('Employee & Period', {
+            'fields': ('employee', 'month', 'year', 'status')
+        }),
+        ('Salary', {
+            'fields': ('salary',)
+        }),
+        ('Allowances', {
+            'fields': ('allowance_hra', 'allowance_conveyance', 'allowance_medical', 'allowance_special', 'allowance_other')
+        }),
+        ('Deductions', {
+            'fields': ('deduction_tax', 'deduction_insurance', 'deduction_other')
+        }),
+        ('Payment Details', {
+            'fields': ('payment_date', 'payment_mode', 'transaction_id', 'created_by')
+        }),
+    )
+    
+    readonly_fields = ['gross_salary', 'total_deductions', 'net_salary', 'created_at']

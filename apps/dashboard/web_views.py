@@ -669,3 +669,39 @@ def chatbot_history(request):
             for c in conversations
         ]
     })
+
+
+def payroll_view(request):
+    """Payroll management view"""
+    from apps.employees.models import Payroll
+    from apps.employees.serializers import PayrollSerializer
+    from django.db.models import Sum
+    
+    if not request.user.is_authenticated:
+        return redirect('login')
+    
+    # Get filter parameters
+    year = request.GET.get('year')
+    month = request.GET.get('month')
+    employee_id = request.GET.get('employee')
+    
+    qs = Payroll.objects.select_related('employee', 'employee__department', 'employee__role')
+    
+    if year:
+        qs = qs.filter(year=int(year))
+    if month:
+        qs = qs.filter(month=int(month))
+    if employee_id:
+        qs = qs.filter(employee_id=employee_id)
+    
+    # Calculate totals
+    total_gross = qs.aggregate(Sum('salary'))['salary__sum'] or 0
+    
+    context = {
+        'title': 'Payroll',
+        'payrolls': qs[:50],
+        'selected_year': int(year) if year else None,
+        'selected_month': int(month) if month else None,
+    }
+    
+    return render(request, 'dashboard/payroll.html', context)

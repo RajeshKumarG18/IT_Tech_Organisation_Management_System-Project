@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import EmployeeViewSet, WorkLogViewSet, AttendanceViewSet, CandidateViewSet, AptitudeTestViewSet, TestAttemptViewSet, NotificationViewSet, LeaveRequestViewSet, AnnouncementViewSet, EventViewSet, ProjectViewSet, ChatBotViewSet
+from .views import EmployeeViewSet, WorkLogViewSet, AttendanceViewSet, CandidateViewSet, AptitudeTestViewSet, TestAttemptViewSet, NotificationViewSet, LeaveRequestViewSet, AnnouncementViewSet, EventViewSet, ProjectViewSet, ChatBotViewSet, PayrollViewSet
 
 router = DefaultRouter()
 router.register(r'', EmployeeViewSet, basename='employees')
@@ -15,6 +15,7 @@ router.register(r'announcements', AnnouncementViewSet, basename='announcements')
 router.register(r'events', EventViewSet, basename='events')
 router.register(r'projects', ProjectViewSet, basename='projects')
 router.register(r'chatbot', ChatBotViewSet, basename='chatbot')
+router.register(r'payrolls', PayrollViewSet, basename='payrolls')
 
 urlpatterns = [
     path('', include(router.urls)),

@@ -1,6 +1,6 @@
 from django.conf import settings
 from rest_framework import serializers
-from .models import Employee, WorkLog, Attendance, Candidate, AptitudeTest, Question, TestAttempt, Answer, ProctoringLog, Notification, LeaveRequest, Announcement, Event, Project
+from .models import Employee, WorkLog, Attendance, Candidate, AptitudeTest, Question, TestAttempt, Answer, ProctoringLog, Notification, LeaveRequest, Announcement, Event, Project, Payroll
 from apps.roles.serializers import RoleListSerializer
 from apps.departments.serializers import DepartmentSerializer
 
@@ -255,3 +255,22 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     def get_team_name(self, obj):
         return obj.team.name if obj.team else None
+
+
+class PayrollSerializer(serializers.ModelSerializer):
+    employee_name = serializers.CharField(read_only=True)
+    gross_salary = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    total_deductions = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+    net_salary = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    
+    class Meta:
+        model = Payroll
+        fields = ['id', 'employee', 'employee_name', 'salary', 'allowance_hra', 'allowance_conveyance', 
+                'allowance_medical', 'allowance_special', 'allowance_other',
+                'deduction_tax', 'deduction_insurance', 'deduction_other',
+                'month', 'year', 'status', 'payment_date', 'payment_mode', 'transaction_id',
+                'gross_salary', 'total_deductions', 'net_salary', 'created_at']
+        read_only_fields = ['created_at']
+    
+    def get_employee_name(self, obj):
+        return obj.employee.full_name

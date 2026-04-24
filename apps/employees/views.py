@@ -10,7 +10,7 @@ from datetime import timedelta
 import random
 import string
 
-from .models import Employee, WorkLog, Attendance, Candidate, AptitudeTest, Question, TestAttempt, Answer, ProctoringLog, Notification, LeaveRequest, Announcement, Event, Project
+from .models import Employee, WorkLog, Attendance, Candidate, AptitudeTest, Question, TestAttempt, Answer, ProctoringLog, Notification, LeaveRequest, Announcement, Event, Project, Payroll
 from .serializers import (
     EmployeeSerializer, EmployeeListSerializer, 
     EmployeeDetailSerializer, EmployeeCreateSerializer,
@@ -21,7 +21,7 @@ from .serializers import (
     TestAttemptSerializer, AnswerSerializer,
     NotificationSerializer, LeaveRequestSerializer,
     AnnouncementSerializer, EventSerializer,
-    ProjectSerializer
+    ProjectSerializer, PayrollSerializer
 )
 
 
@@ -682,4 +682,40 @@ class ChatBotViewSet(viewsets.ViewSet):
                 }
                 for c in conversations
             ]
+        })
+
+
+class PayrollViewSet(viewsets.ModelViewSet):
+    serializer_class = PayrollSerializer
+    permission_classes = [IsAuthenticated]
+    queryset = Payroll.objects.select_related('employee', 'employee__department', 'employee__role').all()
+    
+    def get_queryset(self):
+        user = self.request.user
+        if user.user_type == 'ADMIN':
+            return Payroll.objects.select_related('employee', 'employee__department', 'employee__role').all()
+        elif user.user_type in ['HR', 'MANAGER']:
+            return Payroll.objects.select_related('employee', 'employee__department', 'employee__role').all()
+        else:
+            return Payroll.objects.filter(employee=user.employee_profile)
+    
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user)
+    
+    @action(detail=False, methods=['get'])
+    def summary(self, request):
+        year = request.query_params.get('year')
+        month = request.query_params.get('month')
+        
+        qs = self.get_queryset()
+        if year:
+            qs = qs.filter(year=int(year))
+        if month:
+            qs = qs.filter(month=int(month))
+        
+        return Response({
+            'total_gross': sum(p.gross_salary for p in qs),
+            'total_deductions': sum(p.total_deductions for p in qs),
+            'total_net': sum(p.net_salary for p in qs),
+            'count': qs.count(),
         })

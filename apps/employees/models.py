@@ -2,8 +2,55 @@ import datetime
 from django.db import models
 from django.conf import settings
 from django.contrib.auth import get_user_model
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 User = get_user_model()
+
+
+class Payroll(models.Model):
+    STATUS_CHOICES = [
+        ('DRAFT', 'Draft'),
+        ('PROCESSED', 'Processed'),
+        ('PAID', 'Paid'),
+    ]
+    
+    employee = models.ForeignKey('Employee', on_delete=models.CASCADE, related_name='payrolls')
+    salary = models.DecimalField(max_digits=12, decimal_places=2, validators=[MinValueValidator(0)])
+    allowance_hra = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='House Rent Allowance')
+    allowance_conveyance = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Conveyance Allowance')
+    allowance_medical = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Medical Allowance')
+    allowance_special = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Special Allowance')
+    allowance_other = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Other Allowances')
+    deduction_tax = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Tax Deduction (TDS)')
+    deduction_insurance = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Insurance')
+    deduction_other = models.DecimalField(max_digits=10, decimal_places=2, default=0, help_text='Other Deductions')
+    month = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(12)])
+    year = models.IntegerField(validators=[MinValueValidator(2020), MaxValueValidator(2050)])
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='DRAFT')
+    payment_date = models.DateTimeField(null=True, blank=True)
+    payment_mode = models.CharField(max_length=50, blank=True)
+    transaction_id = models.CharField(max_length=100, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
+    
+    class Meta:
+        ordering = ['-year', '-month']
+        unique_together = ['employee', 'month', 'year']
+    
+    def __str__(self):
+        return f"{self.employee.full_name} - {self.month}/{self.year}"
+    
+    @property
+    def gross_salary(self):
+        return (self.salary or 0) + (self.allowance_hra or 0) + (self.allowance_conveyance or 0) + (self.allowance_medical or 0) + (self.allowance_special or 0) + (self.allowance_other or 0)
+    
+    @property
+    def total_deductions(self):
+        return (self.deduction_tax or 0) + (self.deduction_insurance or 0) + (self.deduction_other or 0)
+    
+    @property
+    def net_salary(self):
+        return self.gross_salary - self.total_deductions
 
 
 class Employee(models.Model):

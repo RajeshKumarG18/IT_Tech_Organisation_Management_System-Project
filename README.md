@@ -1,13 +1,10 @@
 # IT Tech Organisation Management System
 
-A professional Django-based IT Organization Management System with comprehensive features for managing organizational structure, employees, roles, departments, attendance, work logs, events, and more.
-
-
-## Project Overview
+A comprehensive Django-powered IT Organization Management System designed for managing organizational structure, employees, roles, departments, attendance, work logs, payroll, events, and more with professional dashboards and analytics.
 
 
 
-### Architecture
+## Architecture
 
 - **Framework**: Django 5.x (MVT Architecture)
 - **API Layer**: Django Rest Framework (DRF)
@@ -16,20 +13,21 @@ A professional Django-based IT Organization Management System with comprehensive
 - **UI**: Bootstrap 5 + Chart.js for visualizations
 
 
-### Core Technologies
+
+## Core Technologies
 
 - Python 3.10+
+- Django 5.x
 - PostgreSQL (production) / SQLite (development)
 - Django Rest Framework
 - SimpleJWT Authentication
 - CORS Headers
 - Chart.js (Dashboard visualizations)
+- Bootstrap 5
 
----
 
 
 ## Project Structure
-
 
 ```
 IT Tech Organisation Management System/
@@ -55,11 +53,8 @@ IT Tech Organisation Management System/
 ```
 
 
----
-
 
 ## Database Schema
-
 
 ### Organization Levels (6 Levels)
 
@@ -71,8 +66,8 @@ IT Tech Organisation Management System/
 - **Support Functions** (HR, Finance, IT Support)
 
 
-### Models
 
+### Models
 
 #### 1. CustomUser
 | Field | Type | Description |
@@ -83,6 +78,8 @@ IT Tech Organisation Management System/
 | user_type | Enum | ADMIN, EXECUTIVE, MANAGER, HR, EMPLOYEE |
 | first_name | Char | First name |
 | last_name | Char | Last name |
+| phone | Char | Phone number |
+| avatar | Image | Profile avatar |
 
 #### 2. Department
 | Field | Type | Description |
@@ -114,6 +111,9 @@ IT Tech Organisation Management System/
 | date_of_joining | Date | Join date |
 | status | Enum | ACTIVE, INACTIVE, ON_LEAVE, TERMINATED |
 | profile_image | Image | Profile photo |
+| date_of_birth | Date | Date of birth |
+| address | Text | Address |
+| emergency_contact | Char | Emergency contact |
 
 #### 5. Attendance
 | Field | Type | Description |
@@ -132,23 +132,23 @@ IT Tech Organisation Management System/
 | employee | FK | Employee |
 | date | Date | Work date |
 | project | Char | Project name |
-| feature | Char | Feature/task |
 | category | Enum | DEVELOPMENT, MEETING, etc. |
 | work_description | Text | Work description |
 | duration | Duration | Work duration |
 | work_mode | Enum | OFFICE, REMOTE, HYBRID |
+| status | Enum | PENDING, APPROVED, REJECTED |
 
 #### 7. Event
 | Field | Type | Description |
 |-------|------|-------------|
 | title | Char | Event title |
 | description | Text | Event description |
-| event_type | Enum | MEETING, TRAINING, etc. |
+| event_type | Enum | MEETING, TRAINING, HOLIDAY, etc. |
 | location | Char | Event location |
 | meeting_link | URL | Meeting link (Zoom, Google Meet) |
 | start_datetime | DateTime | Start time |
 | end_datetime | DateTime | End time |
-| status | Enum | SCHEDULED, IN_PROGRESS, COMPLETED |
+| status | Enum | SCHEDULED, IN_PROGRESS, COMPLETED, CANCELLED |
 | created_by | FK | User who created |
 
 #### 8. LeaveRequest
@@ -157,7 +157,7 @@ IT Tech Organisation Management System/
 | employee | FK | Employee |
 | leave_type | Enum | ANNUAL, SICK, etc. |
 | start_date | Date | Start date |
-| end_date | End date |
+| end_date | Date | End date |
 | reason | Text | Reason |
 | status | Enum | PENDING, APPROVED, REJECTED |
 
@@ -181,14 +181,34 @@ IT Tech Organisation Management System/
 | start_date | Date | Start date |
 | end_date | Date | End date |
 
-#### 11. OrganizationSettings
+#### 11. Payroll
+| Field | Type | Description |
+|-------|------|-------------|
+| employee | FK | Employee |
+| salary | Decimal | Basic salary |
+| allowance_hra | Decimal | House Rent Allowance |
+| allowance_conveyance | Decimal | Conveyance Allowance |
+| allowance_medical | Decimal | Medical Allowance |
+| allowance_special | Decimal | Special Allowance |
+| allowance_other | Decimal | Other Allowances |
+| deduction_tax | Decimal | Tax Deduction (TDS) |
+| deduction_insurance | Decimal | Insurance |
+| deduction_other | Decimal | Other Deductions |
+| month | Integer | Month (1-12) |
+| year | Integer | Year |
+| status | Enum | DRAFT, PROCESSED, PAID |
+| payment_date | DateTime | Payment date |
+| payment_mode | Char | Payment mode |
+| transaction_id | Char | Transaction ID |
+
+#### 12. OrganizationSettings
 | Field | Type | Description |
 |-------|------|-------------|
 | organization_name | Char | Organization name |
 | logo | Image | Logo image |
 | favicon | Image | Favicon |
 
----
+
 
 ## API Endpoints
 
@@ -197,6 +217,7 @@ IT Tech Organisation Management System/
 |--------|----------|-------------|
 | POST | `/api/accounts/token/` | Get JWT token |
 | POST | `/api/accounts/token/refresh/` | Refresh JWT token |
+
 
 ### Employees
 | Method | Endpoint | Description |
@@ -207,17 +228,43 @@ IT Tech Organisation Management System/
 | PUT | `/api/employees/{id}/` | Update employee |
 | DELETE | `/api/employees/{id}/` | Delete employee |
 
-### Departments
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/departments/` | List departments |
-| POST | `/api/departments/` | Create department |
 
-### Roles
+### Work Logs
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/roles/` | List roles |
-| POST | `/api/roles/` | Create role |
+| GET | `/api/employees/worklogs/` | List work logs |
+| POST | `/api/employees/worklogs/` | Create work log |
+
+
+### Attendance
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/employees/attention/` | List attendance |
+| POST | `/api/employees/attention/checkin/` | Check in |
+| POST | `/api/employees/attention/checkout/` | Check out |
+
+
+### Leave Requests
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/employees/leave-requests/` | List leave requests |
+| POST | `/api/employees/leave-requests/` | Create leave request |
+
+
+### Events
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/employees/events/` | List events |
+| POST | `/api/employees/events/` | Create event |
+
+
+### Payroll
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/employees/payrolls/` | List payroll records |
+| POST | `/api/employees/payrolls/` | Create payroll |
+| GET | `/api/employees/payrolls/summary/` | Payroll summary |
+
 
 ### Dashboard
 | Method | Endpoint | Description |
@@ -225,12 +272,13 @@ IT Tech Organisation Management System/
 | GET | `/api/dashboard/org-chart/` | Organization chart data |
 | GET | `/api/dashboard/api/` | Dashboard statistics |
 
+
 ### ChatBot
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/dashboard/chatbot/` | ChatBot API |
 
----
+
 
 ## UI Routes
 
@@ -238,6 +286,7 @@ IT Tech Organisation Management System/
 |----------|-------------|
 | `/login/` | Login page |
 | `/logout/` | Logout |
+| `/password-change/` | Change password |
 | `/dashboard/` | Main dashboard |
 | `/profile/` | User profile |
 | `/employees/` | Employee list |
@@ -245,10 +294,11 @@ IT Tech Organisation Management System/
 | `/worklog/` | Work log & attendance |
 | `/schedule/` | Events & leave requests |
 | `/reports/` | Reports & analytics |
+| `/payroll/` | Payroll management |
 | `/chatbot/` | Organization ChatBot |
 | `/admin/` | Admin panel |
 
----
+
 
 ## Getting Started
 
@@ -261,53 +311,63 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+
 ### 2. Run Migrations
 ```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
 
+
 ### 3. Seed Initial Data
 ```bash
 python3 manage.py seed_data
 ```
+
 
 ### 4. Run Server
 ```bash
 python3 manage.py runserver
 ```
 
+
 ### 5. Access
 - **Web UI**: http://127.0.0.1:8000/
 - **Admin**: http://127.0.0.1:8000/admin/
 - **API**: http://127.0.0.1:8000/api/
 
----
+
 
 ## Default Login Credentials
 
 | Role | Username | Password |
 |------|----------|----------|
-| Admin |  |  |
+| System Admin | admin | (set during seed_data) |
 
----
+Create superuser:
+```bash
+python3 manage.py createsuperuser
+```
+
+
 
 ## Features Implemented
 
-### ✅ Core Features
+### Core Features
 - [x] Django MVT Architecture
 - [x] Role-based authentication (ADMIN, EXECUTIVE, MANAGER, HR, EMPLOYEE)
 - [x] Employee management (CRUD)
-- [x] Department hierarchy
-- [x] Role management with 6 levels
+- [x] Department hierarchy with parent-child relationships
+- [x] Role management with 6 organization levels
 - [x] Manager-subordinate relationships
 - [x] JWT Authentication
 - [x] REST APIs with DRF
 
-### ✅ Dashboard Features
+
+### Dashboard Features
 - [x] Executive dashboard with stats widgets
 - [x] Orange (#FF6B00) + Dark Blue (#0B1F3A) theme
-- [x] Stats ticker
+- [x] Stats ticker with trends
 - [x] Quick actions buttons
 - [x] Interactive charts (Chart.js)
 - [x] Mini stat cards
@@ -324,22 +384,25 @@ python3 manage.py runserver
 - [x] Project status
 - [x] Mobile-responsive sidebar
 
-### ✅ Organization Management
+
+### Organization Management
 - [x] Organization Settings (name, logo, favicon)
 - [x] Dynamic organization name updates everywhere
 - [x] Custom admin panel
+- [x] Password change functionality
 
-### ✅ ChatBot Features
+
+### ChatBot Features
 - [x] Organisation ChatBot with detailed responses
 - [x] Advanced keyword matching
 - [x] Security - blocks sensitive info requests
 - [x] Casual acknowledgment handling
 - [x] Floating ChatBot widget in sidebar
-- [x] ChatBot accessible from both main app and Admin Panel
 - [x] Conversation history storage
 - [x] LLM Integration support (OpenAI GPT)
 
-### ✅ Schedule & Reports
+
+### Schedule & Reports
 - [x] Schedule page (`/schedule/`)
 - [x] Upcoming events with meeting links
 - [x] Pending leave requests
@@ -349,28 +412,39 @@ python3 manage.py runserver
 - [x] Meeting records (upcoming & past)
 - [x] Meeting statistics
 
-### ✅ Meetings/Events
+
+### Meetings/Events
 - [x] Meeting link field (Zoom, Google Meet URLs)
 - [x] Event types (Meeting, Training, Holiday, etc.)
-- [x] Auto status based on time (Scheduled, In Progress, Completed)
+- [x] Auto status based on time (Scheduled, In Progress, Completed, Cancelled)
 - [x] Clickable meeting links
 - [x] Past meetings tracking in Reports
 
-### ✅ Attendance & Work Log
+
+### Attendance & Work Log
 - [x] Check In with face capture
 - [x] Check Out with face capture
 - [x] Camera access for photo capture
 - [x] Photo preview before submitting
 - [x] Retake photo option
-- [x] 3-step work log workflow:
-  - Step 1: Fill work details
-  - Step 2: Capture photo & Check Out
-  - Step 3: Save (enables only when both complete)
+- [x] 3-step work log workflow
 - [x] Attendance photo display
 - [x] Recent work logs display
 - [x] Read-only photos in admin
 
-### ✅ UI/UX Features
+
+### Payroll Management
+- [x] Payroll model with salary & allowances
+- [x] Allowances: HRA, Conveyance, Medical, Special, Other
+- [x] Deductions: Tax, Insurance, Other
+- [x] Auto-calculated Gross, Deductions, Net salary
+- [x] Monthly payroll records
+- [x] Status tracking (Draft, Processed, Paid)
+- [x] Payment details (date, mode, transaction ID)
+- [x] Payroll summary statistics
+
+
+### UI/UX Features
 - [x] Professional dashboard layout
 - [x] Animated backgrounds
 - [x] Hover effects on cards
@@ -379,13 +453,7 @@ python3 manage.py runserver
 - [x] Chart animations
 - [x] Responsive design
 
-### ✅ Bug Fixes
-- [x] Fixed duplicate sidebar links
-- [x] URL namespace warning resolved
-- [x] Login error message in red
-- [x] ChatBot "ok" response improved
 
----
 
 ## Theme Colors
 
@@ -394,7 +462,7 @@ python3 manage.py runserver
 | Primary (Orange) | #FF6B00 | Buttons, highlights, gradients |
 | Secondary (Dark Blue) | #0B1F3A | Sidebar, headers, backgrounds |
 
----
+
 
 ## Environment Variables
 
@@ -405,15 +473,16 @@ SECRET_KEY=your-secret-key
 DEBUG=True
 ALLOWED_HOSTS=*
 OPENAI_API_KEY=your-openai-api-key  # Optional - for LLM ChatBot
+DATABASE_URL=postgres://user:pass@localhost:5432/dbname  # Optional - for PostgreSQL
 ```
 
----
+
 
 ## License
 
 MIT License
 
----
+
 
 ## Author
 
