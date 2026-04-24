@@ -1,0 +1,6 @@
+# Gradle wrapper zip (large file)
+android/gradle/wrapper/*.zip
+
+# Build folders (VERY IMPORTANT)
+android/build/
+android/app/build/
